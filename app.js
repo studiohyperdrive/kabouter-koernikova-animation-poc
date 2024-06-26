@@ -1,17 +1,25 @@
-const bg = bodymovin.loadAnimation({
-    container: document.getElementById('bm'),
-    renderer: 'canvas',
-    loop: true,
-    autoplay: true,
-    path: './assets/Comp 1.json',
-})
+// const bg = bodymovin.loadAnimation({
+//     container: document.getElementById('bm'),
+//     renderer: 'canvas',
+//     loop: true,
+//     autoplay: true,
+//     path: './assets/Background.json',
+// });
+
+// const tocheck = bodymovin.loadAnimation({
+//     container: document.getElementById('bm'),
+//     renderer: 'canvas',
+//     loop: true,
+//     autoplay: true,
+//     path: './assets/TOCHECK.json',
+// });
 
 const deer = bodymovin.loadAnimation({
     container: document.getElementById('bm'),
     renderer: 'canvas',
     loop: true,
     autoplay: true,
-    path: './assets/Berg.json',
+    path: './assets/Deer.json',
 });
 
 deer.addEventListener('data_ready', (e) => {
