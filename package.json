@@ -1,17 +1,20 @@
 {
-  "name": "animation-poc",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "js-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "lottie-web": "^5.12.2"
-  },
   "devDependencies": {
+    "typescript": "^5.2.2",
     "vite": "^5.3.1"
+  },
+  "dependencies": {
+    "@types/howler": "^2.2.11",
+    "howler": "^2.2.4",
+    "lottie-web": "^5.12.2"
   }
 }

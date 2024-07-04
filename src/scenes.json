@@ -1,0 +1,16 @@
+[
+  {
+    "name": "scene1",
+    "animationPath": "./assets/deerWithInteractivity/data.json",
+    "interactive": [{ "trigger": "rendier", "effect": "rendier-interactivity" }]
+  },
+  {
+    "name": "scene2",
+    "animationPath": "./assets/singleDeer/data.json",
+    "interactive": [{ "trigger": "reindeer", "effect": "tail" }]
+  },
+  {
+    "name": "scene3",
+    "animationPath": "./assets/fullAnimation/data.json"
+  }
+]
