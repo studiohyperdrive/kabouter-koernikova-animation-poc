@@ -5,11 +5,24 @@ interface IScene {
   name: string;
   animationPath: string;
   interactive?: IInteractivity[];
+  audio?: IAudio;
 }
 
 interface IInteractivity {
   trigger: string;
   effect: string;
+}
+
+interface IAudio {
+  ambient: string;
+  backgroundMusic: string;
+  voiceOver: string;
+}
+
+interface IAudioTracks {
+  ambient: Howl;
+  backgroundMusic: Howl;
+  voiceOver: Howl;
 }
 
 const createAudio = (assetPath: string) => {
@@ -32,6 +45,27 @@ export const renderScene = (scene: IScene) => {
   const container = document.createElement("div");
   container.id = `bm-${scene.name}`;
 
+  const audioTracks: IAudioTracks = {
+    ambient: new Howl({
+      src: [scene.audio?.ambient || ""],
+      autoplay: true,
+      loop: true,
+      volume: 0.35,
+    }),
+    backgroundMusic: new Howl({
+      src: [scene.audio?.backgroundMusic || ""],
+      autoplay: true,
+      loop: true,
+      volume: 0.1,
+    }),
+    voiceOver: new Howl({
+      src: [scene.audio?.voiceOver || ""],
+      autoplay: true,
+      loop: false,
+      volume: 0.5,
+    }),
+  };
+
   if (container && wrapper) {
     wrapper.firstChild?.remove();
     wrapper.appendChild(container);
@@ -40,13 +74,15 @@ export const renderScene = (scene: IScene) => {
     const anim = bodymovin.loadAnimation({
       container: container,
       renderer: "svg",
-      loop: false,
-      autoplay: false,
+      loop: true,
+      autoplay: true,
       path: scene.animationPath,
       audioFactory: createAudio,
     });
 
     anim.addEventListener("DOMLoaded", () => {
+      audioTracks.ambient.play();
+      audioTracks.backgroundMusic.play();
       // Get all layers and filter out the interactive layers
       const layers = anim.renderer.layers;
 
@@ -71,14 +107,22 @@ export const renderScene = (scene: IScene) => {
           (layer: any) => layer.nm.slice(1) === interactive?.effect
         );
 
-        anim.goToAndStop(0, false, effect.nm.slice(1));
-        const element = document.querySelector(layer.nm);
+        // anim.goToAndStop(0, false, effect.nm.slice(1));
+        const interactiveElement = document.querySelector(layer.nm);
+        const effectElement = document.querySelector(effect.nm);
 
-        element.addEventListener("mouse", () => {});
+        effectElement.style.display = "none";
 
-        element.addEventListener("click", () => {
-          console.log(`${element.id} clicked`);
+        interactiveElement.addEventListener("click", () => {
+          console.log(`${interactiveElement.id} clicked`);
           anim.goToAndPlay(0, false, effect.nm.slice(1));
+          interactiveElement.style.display = "none";
+          effectElement.style.display = "block";
+
+          setTimeout(() => {
+            interactiveElement.style.display = "block";
+            effectElement.style.display = "none";
+          }, 250);
         });
       });
     });
