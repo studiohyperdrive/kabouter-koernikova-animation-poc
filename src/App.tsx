@@ -16,57 +16,46 @@ function App() {
   };
 
   const fetchScenesData = async () => {
-    let scenes: any = [];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const scenes: any = [];
+
     ScenesJson.forEach(async (scene) => {
       const animationData = await fetchAnimationData(
-        scene.animation.animationPath
+        scene.animation.animationAssetsPath
       );
 
       let transitionAnimationData = undefined;
+
       if (scene.transitionAnimation) {
         transitionAnimationData = await fetchAnimationData(
-          scene.transitionAnimation.animationPath
+          scene.transitionAnimation.animationAssetsPath
         );
       }
 
-      await Promise.all([animationData, transitionAnimationData]).then(
-        (values) => {
-          scenes.push({
-            ...scene,
-            animation: {
-              ...scene.animation,
-              animationData: values[0],
-            },
-            transitionAnimation: {
-              ...scene.transitionAnimation,
-              animationData: values[1],
-            },
-          });
-        }
-      );
+      scenes.push({
+        ...scene,
+        animation: {
+          ...scene.animation,
+          animationData,
+        },
+        transitionAnimation: {
+          ...scene.transitionAnimation,
+          animationData: transitionAnimationData,
+        },
+      });
     });
 
     setScenesData(scenes);
   };
 
   useEffect(() => {
-    console.log(scenesData);
-    // fetchScenesData();
-  }, []);
-
-  // useEffect(() => {
-  //   console.log("scenesData changed", scenesData);
-  //   if (scenesData && scenesData.length !== 0) {
-  //     console.log(scenesData);
-  //   }
-  // }, [scenesData]);
+    fetchScenesData();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
-      {scenesData ? (
-        scenesData.length !== 0 && (
-          <AnimationController scenesData={scenesData} />
-        )
+      {scenesData?.length >= 0 ? (
+        <AnimationController scenesData={scenesData} />
       ) : (
         <h1>Loading...</h1>
       )}

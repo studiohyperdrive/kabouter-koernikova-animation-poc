@@ -110,7 +110,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
             </button>
 
             <div style={{ display: "flex", gap: ".5rem" }}>
-              {scenesData.map((scene, index) => (
+              {scenesData.map((_scene, index) => (
                 <button
                   key={index}
                   onClick={() =>

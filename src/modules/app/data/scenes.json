@@ -2,7 +2,7 @@
   {
     "name": "scene1",
     "animation": {
-      "animationPath": "fullAnimation",
+      "animationAssetsPath": "fullAnimation",
       "audio": {
         "ambient": "./assets/sound/ambient.mp3",
         "backgroundMusic": "./assets/sound/background-music.mp3",
@@ -10,27 +10,27 @@
       }
     },
     "transitionAnimation": {
-      "animationPath": "transition"
+      "animationAssetsPath": "transition"
     },
     "interactive": [{ "trigger": "rendier", "effect": "rendier-interactivity" }]
   },
   {
     "name": "scene2",
     "animation": {
-      "animationPath": "singleDeer"
+      "animationAssetsPath": "singleDeer"
     },
     "transitionAnimation": {
-      "animationPath": "transition"
+      "animationAssetsPath": "transition"
     },
     "interactive": [{ "trigger": "reindeer", "effect": "tail" }]
   },
   {
     "name": "scene3",
     "animation": {
-      "animationPath": "deerWithInteractivity"
+      "animationAssetsPath": "deerWithInteractivity"
     },
     "transitionAnimation": {
-      "animationPath": "transition"
+      "animationAssetsPath": "transition"
     },
     "interactive": [{ "trigger": "rendier", "effect": "rendier-interactivity" }]
   }
