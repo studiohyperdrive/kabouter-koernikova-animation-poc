@@ -23,18 +23,6 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
   >(undefined);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
-  useEffect(() => {
-    console.log("mounted");
-
-    return () => {
-      console.log("unmounted");
-    };
-  }, []);
-
-  useEffect(() => {
-    console.log(scenesData);
-  }, [scenesData]);
-
   const sceneChange = (index: number) => {
     if (currentScene?.transitionAnimation) {
       setInTransition(true);
@@ -82,8 +70,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
       const scene = scenesData[sceneIndex];
       setCurrentScene(scene);
 
-      if (scene.transitionAnimation) {
-        console.log(scene.transitionAnimation);
+      if (scene?.transitionAnimation) {
         setCurrentTransition({
           animationData: scene.transitionAnimation.animationData,
           animationAssetsPath: scene.transitionAnimation.animationAssetsPath,
@@ -92,7 +79,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
         setCurrentTransition(undefined);
       }
     }
-  }, []);
+  }, [scenesData]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>

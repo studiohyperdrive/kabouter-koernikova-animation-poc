@@ -113,7 +113,6 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
 
   useEffect(() => {
     if (inTransition) {
-      console.log(inTransition);
       audioTracks?.ambient.fade(0.25, 0, 1000);
       audioTracks?.backgroundMusic.fade(0.35, 0, 1000);
       audioTracks?.voiceOver.fade(0.5, 0, 1000);
