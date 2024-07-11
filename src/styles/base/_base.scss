@@ -1,0 +1,21 @@
+@import "../abstracts";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: $white;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  font-weight: normal;
+}
+
+div#root {
+  width: 100%;
+  height: 100%;
+}

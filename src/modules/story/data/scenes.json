@@ -1,0 +1,52 @@
+[
+  {
+    "name": "scene1",
+    "animation": {
+      "animationAssetsPath": "fullAnimation",
+      "audio": {
+        "ambient": "./assets/sound/ambient.mp3",
+        "backgroundMusic": "./assets/sound/background-music.mp3",
+        "voiceOver": "./assets/sound/voice-over.mp3"
+      }
+    },
+    "transitionAnimation": {
+      "animationAssetsPath": "transition"
+    },
+    "interactive": [
+      { "trigger": "rendier", "effect": "rendier-interactivity" }
+    ],
+    "thumbnail": "./assets/fullAnimation/thumbnail.jpg"
+  },
+  {
+    "name": "scene2",
+    "animation": {
+      "animationAssetsPath": "eagleFlight",
+      "audio": {
+        "ambient": "./assets/sound/howling-wind.mp3",
+        "backgroundMusic": "./assets/sound/in-flight.mp3"
+      }
+    },
+    "transitionAnimation": {
+      "animationAssetsPath": "transition"
+    },
+    "interactive": [{ "trigger": "reindeer", "effect": "tail" }],
+    "thumbnail": "./assets/eagleFlight/thumbnail.jpg"
+  },
+  {
+    "name": "scene3",
+    "animation": {
+      "animationAssetsPath": "map",
+      "audio": {
+        "ambient": "./assets/sound/train.mp3",
+        "backgroundMusic": "./assets/sound/adventure.mp3"
+      }
+    },
+    "transitionAnimation": {
+      "animationAssetsPath": "transition"
+    },
+    "interactive": [
+      { "trigger": "rendier", "effect": "rendier-interactivity" }
+    ],
+    "thumbnail": "./assets/map/thumbnail.jpg"
+  }
+]

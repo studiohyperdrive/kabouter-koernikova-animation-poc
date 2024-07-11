@@ -1,0 +1,6 @@
+$button-border: solid $dark-blue 0.3rem;
+$button-border-radius: 1rem;
+
+@mixin button-border-custom-color($color) {
+  border: solid $color 0.3rem;
+}
