@@ -2,51 +2,51 @@
   {
     "name": "scene1",
     "animation": {
-      "animationAssetsPath": "fullAnimation",
+      "animationAssetsPath": "story1/fullAnimation",
       "audio": {
-        "ambient": "./assets/sound/ambient.mp3",
-        "backgroundMusic": "./assets/sound/background-music.mp3",
-        "voiceOver": "./assets/sound/voice-over.mp3"
+        "ambient": "./assets/story1/sound/ambient.mp3",
+        "backgroundMusic": "./assets/story1/sound/background-music.mp3",
+        "voiceOver": "./assets/story1/sound/voice-over.mp3"
       }
     },
     "transitionAnimation": {
-      "animationAssetsPath": "transition"
+      "animationAssetsPath": "story1/transition"
     },
     "interactive": [
       { "trigger": "rendier", "effect": "rendier-interactivity" }
     ],
-    "thumbnail": "./assets/fullAnimation/thumbnail.jpg"
+    "thumbnail": "./assets/story1/fullAnimation/thumbnail.jpg"
   },
   {
     "name": "scene2",
     "animation": {
-      "animationAssetsPath": "eagleFlight",
+      "animationAssetsPath": "story1/eagleFlight",
       "audio": {
-        "ambient": "./assets/sound/howling-wind.mp3",
-        "backgroundMusic": "./assets/sound/in-flight.mp3"
+        "ambient": "./assets/story1/sound/howling-wind.mp3",
+        "backgroundMusic": "./assets/story1/sound/in-flight.mp3"
       }
     },
     "transitionAnimation": {
-      "animationAssetsPath": "transition"
+      "animationAssetsPath": "story1/transition"
     },
     "interactive": [{ "trigger": "reindeer", "effect": "tail" }],
-    "thumbnail": "./assets/eagleFlight/thumbnail.jpg"
+    "thumbnail": "./assets/story1/eagleFlight/thumbnail.jpg"
   },
   {
     "name": "scene3",
     "animation": {
-      "animationAssetsPath": "map",
+      "animationAssetsPath": "story1/map",
       "audio": {
-        "ambient": "./assets/sound/train.mp3",
-        "backgroundMusic": "./assets/sound/adventure.mp3"
+        "ambient": "./assets/story1/sound/train.mp3",
+        "backgroundMusic": "./assets/story1/sound/adventure.mp3"
       }
     },
     "transitionAnimation": {
-      "animationAssetsPath": "transition"
+      "animationAssetsPath": "story1/transition"
     },
     "interactive": [
       { "trigger": "rendier", "effect": "rendier-interactivity" }
     ],
-    "thumbnail": "./assets/map/thumbnail.jpg"
+    "thumbnail": "./assets/story1/map/thumbnail.jpg"
   }
 ]
