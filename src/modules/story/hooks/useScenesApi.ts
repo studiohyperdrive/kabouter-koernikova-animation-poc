@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ScenesContext } from "../providers";
 import ScenesJson from "../data/scenes.json";
+import Story2 from "../data/story2.json";
 
 export const useScenesApi = () => {
   const { scenes, setScenes } = useContext(ScenesContext);
@@ -17,7 +18,7 @@ export const useScenesApi = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const scenes: any = [];
 
-    ScenesJson.forEach(async (scene) => {
+    Story2.forEach(async (scene) => {
       const animationData = await fetchAnimationData(
         scene.animation.animationAssetsPath
       );

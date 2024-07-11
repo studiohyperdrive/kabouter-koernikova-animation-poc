@@ -27,7 +27,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
   const [currentTransition, setCurrentTransition] = useState<
     IAnimation | undefined
   >(undefined);
-  // const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isAmbientPlaying, setIsAmbientPlaying] = useState<boolean>(true);
   const navigate = useNavigate();
 
   const changeScene = (index: number) => {
@@ -77,6 +77,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
   };
 
   useEffect(() => {
+    console.log(scenesData);
     if (scenesData.length !== 0) {
       const scene = scenesData[sceneIndex];
       setCurrentScene(scene);
@@ -119,7 +120,10 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                 {/* <div>language select</div> */}
 
                 <div>
-                  <Button icon={<MusicNoteIcon />} />
+                  <Button
+                    icon={<MusicNoteIcon />}
+                    onClick={() => setIsAmbientPlaying(!isAmbientPlaying)}
+                  />
                 </div>
 
                 {/* <button
@@ -168,7 +172,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                 interactive={currentScene.interactive}
                 autoplay={true}
                 loop={true}
-                // isPlaying={isPlaying}
+                isAmbientPlaying={isAmbientPlaying}
                 inTransition={inTransition}
               />
             </div>

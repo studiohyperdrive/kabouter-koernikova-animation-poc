@@ -9,6 +9,6 @@ export interface ILottieAnimationProps {
   autoplay?: boolean;
   loop?: boolean;
   play?: boolean;
-  isPlaying?: boolean;
+  isAmbientPlaying?: boolean;
   inTransition?: boolean;
 }

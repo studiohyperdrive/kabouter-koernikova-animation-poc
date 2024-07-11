@@ -13,7 +13,7 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
   autoplay = false,
   loop = false,
   play = true,
-  isPlaying = true,
+  isAmbientPlaying = true,
   inTransition = false,
 }) => {
   const animationRef = useRef<any>(null);
@@ -99,17 +99,22 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
   }, [play]);
 
   useEffect(() => {
-    if (isPlaying) {
-      animationRef.current.play();
+    console.log(isAmbientPlaying);
+    if (isAmbientPlaying) {
+      audioTracks?.ambient.play();
       audioTracks?.backgroundMusic.play();
-      audioTracks?.voiceOver.play();
+      audioTracks?.ambient.fade(0, 0.25, 1500);
+      audioTracks?.backgroundMusic.fade(0, 0.35, 1500);
     } else {
-      animationRef.current.pause();
-      audioTracks?.ambient.pause();
-      audioTracks?.backgroundMusic.pause();
-      audioTracks?.voiceOver.pause();
+      audioTracks?.ambient.fade(0.25, 0, 1000);
+      audioTracks?.backgroundMusic.fade(0.35, 0, 1000);
+
+      setTimeout(() => {
+        audioTracks?.ambient.pause();
+        audioTracks?.backgroundMusic.pause();
+      }, 1500);
     }
-  }, [isPlaying]);
+  }, [isAmbientPlaying]);
 
   useEffect(() => {
     if (inTransition) {

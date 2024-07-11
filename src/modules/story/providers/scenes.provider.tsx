@@ -1,6 +1,7 @@
 import { createContext, FC, useState } from "react";
 import { IScene } from "../types";
 import ScenesDataJson from "../data/scenesData.json";
+import Story2 from "../data/story2.json";
 
 interface ScenesContextProps {
   scenes: IScene[];
@@ -17,7 +18,7 @@ export const ScenesContext = createContext<ScenesContextProps>({
 });
 
 export const ScenesProvider: FC<ScenesProviderProps> = ({ children }) => {
-  const [scenes, setScenes] = useState<IScene[]>(ScenesDataJson);
+  const [scenes, setScenes] = useState<IScene[]>(Story2);
   const scenesContextValue = { scenes, setScenes };
 
   return (
