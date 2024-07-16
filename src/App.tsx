@@ -1,13 +1,8 @@
 import { AnimationController } from "./modules/story/components";
-import { useEffect } from "react";
 import { useScenesApi } from "./modules/story/hooks";
 
 function App() {
-  const { scenes, fetchScenes } = useScenesApi();
-
-  useEffect(() => {
-    fetchScenes();
-  }, []);
+  const { scenes } = useScenesApi();
 
   return (
     <div>
