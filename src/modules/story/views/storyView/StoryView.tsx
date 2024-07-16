@@ -1,17 +1,13 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { AnimationController } from "../../components";
 import { useScenesApi } from "../../hooks";
 
 export const StoryView: FC = () => {
-  const { scenes, fetchScenes } = useScenesApi();
-
-  useEffect(() => {
-    fetchScenes();
-  }, []);
+  const { scenes } = useScenesApi();
 
   return (
     <main>
-      {scenes?.length >= 0 ? (
+      {scenes ? (
         <AnimationController scenesData={scenes} />
       ) : (
         <h1>Loading...</h1>

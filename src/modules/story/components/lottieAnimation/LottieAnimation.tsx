@@ -1,8 +1,7 @@
 import Lottie from "lottie-react";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef } from "react";
 import { ILottieAnimationProps } from "./LottieAnimation.props";
-import { IAudioTracks } from "../../types";
-import { Howl } from "howler";
+import { useAudio } from "../../hooks";
 
 export const LottieAnimation: FC<ILottieAnimationProps> = ({
   animationData,
@@ -15,51 +14,32 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
   play = true,
   isAmbientPlaying = true,
   inTransition = false,
+  language,
 }) => {
   const animationRef = useRef<any>(null);
-  const [audioTracks, setAudioTracks] = useState<IAudioTracks | undefined>();
+  const {
+    audioTracks,
+    createAudioTracks,
+    playAllAudioTracks,
+    unloadAllAudioTracks,
+    fadeInAmbientTracks,
+    fadeOutAllAudioTracks,
+    fadeOutAmbientTracks,
+    switchVoiceOverTrack,
+  } = useAudio();
 
   useEffect(() => {
-    if (audio) {
-      const sceneAudioTracks: IAudioTracks = {
-        ambient: new Howl({
-          src: [audio?.ambient || ""],
-          autoplay: false,
-          loop: true,
-          volume: 0.25,
-        }),
-        backgroundMusic: new Howl({
-          src: [audio?.backgroundMusic || ""],
-          autoplay: false,
-          loop: true,
-          volume: 0.35,
-        }),
-        voiceOver: new Howl({
-          src: [audio?.voiceOver || ""],
-          autoplay: false,
-          loop: false,
-          volume: 0.5,
-        }),
-      };
-
-      setAudioTracks(sceneAudioTracks);
-    } else {
-      setAudioTracks(undefined);
-    }
+    createAudioTracks(audio, language);
   }, [animationData]);
 
   useEffect(() => {
     if (audioTracks) {
-      audioTracks.ambient.play();
-      audioTracks.backgroundMusic.play();
-      audioTracks.voiceOver.play();
+      playAllAudioTracks();
     }
 
     return () => {
       if (audioTracks) {
-        audioTracks.ambient.unload();
-        audioTracks.backgroundMusic.unload();
-        audioTracks.voiceOver.unload();
+        unloadAllAudioTracks();
       }
     };
   }, [audioTracks]);
@@ -99,30 +79,25 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
   }, [play]);
 
   useEffect(() => {
-    console.log(isAmbientPlaying);
     if (isAmbientPlaying) {
-      audioTracks?.ambient.play();
-      audioTracks?.backgroundMusic.play();
-      audioTracks?.ambient.fade(0, 0.25, 1500);
-      audioTracks?.backgroundMusic.fade(0, 0.35, 1500);
+      fadeInAmbientTracks();
     } else {
-      audioTracks?.ambient.fade(0.25, 0, 1000);
-      audioTracks?.backgroundMusic.fade(0.35, 0, 1000);
-
-      setTimeout(() => {
-        audioTracks?.ambient.pause();
-        audioTracks?.backgroundMusic.pause();
-      }, 1500);
+      fadeOutAmbientTracks();
     }
   }, [isAmbientPlaying]);
 
   useEffect(() => {
     if (inTransition) {
-      audioTracks?.ambient.fade(0.25, 0, 1000);
-      audioTracks?.backgroundMusic.fade(0.35, 0, 1000);
-      audioTracks?.voiceOver.fade(0.5, 0, 1000);
+      fadeOutAllAudioTracks();
     }
   }, [inTransition]);
+
+  useEffect(() => {
+    switchVoiceOverTrack(audio, language);
+    setTimeout(() => {
+      animationRef.current?.goToAndPlay(0, true);
+    }, 1000);
+  }, [language]);
 
   return (
     <Lottie

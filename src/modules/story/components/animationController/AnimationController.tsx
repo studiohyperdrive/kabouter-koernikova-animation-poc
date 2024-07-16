@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { IAnimation, IScene } from "../../types";
+import { ELanguage, IAnimation, IScene } from "../../types";
 import { LottieAnimation } from "../lottieAnimation";
 import styles from "./AnimationController.module.scss";
 import classNames from "classnames";
@@ -28,6 +28,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
     IAnimation | undefined
   >(undefined);
   const [isAmbientPlaying, setIsAmbientPlaying] = useState<boolean>(true);
+  const [language, setLanguage] = useState<ELanguage>(ELanguage.NL);
   const navigate = useNavigate();
 
   const changeScene = (index: number) => {
@@ -77,7 +78,6 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
   };
 
   useEffect(() => {
-    console.log(scenesData);
     if (scenesData.length !== 0) {
       const scene = scenesData[sceneIndex];
       setCurrentScene(scene);
@@ -117,7 +117,11 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                   />
                 </div>
 
-                {/* <div>language select</div> */}
+                <div>
+                  <button onClick={() => setLanguage(ELanguage.NL)}>nl</button>
+                  <button onClick={() => setLanguage(ELanguage.EN)}>en</button>
+                  <button onClick={() => setLanguage(ELanguage.FR)}>fr</button>
+                </div>
 
                 <div>
                   <Button
@@ -162,6 +166,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                   animationAssetsPath={currentTransition.animationAssetsPath}
                   zIndex={10}
                   play={inTransition}
+                  language={language}
                 />
               )}
 
@@ -174,6 +179,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                 loop={true}
                 isAmbientPlaying={isAmbientPlaying}
                 inTransition={inTransition}
+                language={language}
               />
             </div>
           )}

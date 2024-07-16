@@ -1,20 +1,25 @@
-import StoriesJson from "../../data/stories.json";
 import { APP_PATHS } from "../../../app/app.paths";
-import { useScenesApi } from "../../hooks";
+import { useScenesApi, useStoriesApi } from "../../hooks";
 import { IScene } from "../../types";
 import { useNavigate } from "react-router";
+import { useEffect } from "react";
 
 export const StoriesOverview = () => {
   const navigate = useNavigate();
-  const { setScenes, fetchScenes } = useScenesApi();
-  const onClickStory = (scenes: IScene[]) => {
-    setScenes(scenes);
-    fetchScenes();
+  const { stories, fetchStories } = useStoriesApi();
+  const { fetchScenes } = useScenesApi();
+  const onClickStory = async (scenes: IScene[]) => {
+    await fetchScenes(scenes);
     navigate(APP_PATHS.story);
   };
+
+  useEffect(() => {
+    fetchStories();
+  }, []);
+
   return (
     <div>
-      {StoriesJson.map((story) => (
+      {stories.map((story) => (
         <button
           onClick={() => onClickStory(story.scenes)}
           key={`story-${story.title}`}

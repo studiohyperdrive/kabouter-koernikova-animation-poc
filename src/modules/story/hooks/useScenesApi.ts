@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ScenesContext } from "../providers";
-import ScenesJson from "../data/scenes.json";
-import Story2 from "../data/story2.json";
+import { IScene } from "../types";
 
 export const useScenesApi = () => {
   const { scenes, setScenes } = useContext(ScenesContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchAnimationData = (path: string) => {
     try {
@@ -14,42 +14,49 @@ export const useScenesApi = () => {
     }
   };
 
-  const fetchScenes = async () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const scenes: any = [];
+  const fetchScenes = async (scenes: IScene[]) => {
+    setIsLoading(true);
 
-    Story2.forEach(async (scene) => {
-      const animationData = await fetchAnimationData(
-        scene.animation.animationAssetsPath
-      );
-
-      let transitionAnimationData = undefined;
-
-      if (scene.transitionAnimation) {
-        transitionAnimationData = await fetchAnimationData(
-          scene.transitionAnimation.animationAssetsPath
+    await Promise.all(
+      scenes.map(async (scene) => {
+        const animationData = await fetchAnimationData(
+          scene.animation.animationAssetsPath
         );
-      }
 
-      scenes.push({
-        ...scene,
-        animation: {
-          ...scene.animation,
-          animationData,
-        },
-        transitionAnimation: {
-          ...scene.transitionAnimation,
-          animationData: transitionAnimationData,
-        },
-      });
+        let transitionAnimationData = undefined;
+
+        if (scene.transitionAnimation) {
+          transitionAnimationData = await fetchAnimationData(
+            scene.transitionAnimation.animationAssetsPath
+          );
+        }
+
+        return {
+          ...scene,
+          animation: {
+            ...scene.animation,
+            animationData,
+          },
+          ...(scene.transitionAnimation
+            ? {
+                transitionAnimation: {
+                  ...scene.transitionAnimation,
+                  animationData: transitionAnimationData,
+                },
+              }
+            : {}),
+        };
+      })
+    ).then((data) => {
+      setScenes(data);
+      setIsLoading(false);
     });
-
-    setScenes(scenes);
   };
 
   return {
     scenes,
     setScenes,
     fetchScenes,
+    isLoading,
   };
 };

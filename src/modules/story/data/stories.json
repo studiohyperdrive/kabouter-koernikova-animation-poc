@@ -6,52 +6,253 @@
       {
         "name": "scene1",
         "animation": {
-          "animationAssetsPath": "fullAnimation",
+          "animationAssetsPath": "story1/fullAnimation",
           "audio": {
-            "ambient": "./assets/sound/ambient.mp3",
-            "backgroundMusic": "./assets/sound/background-music.mp3",
-            "voiceOver": "./assets/sound/voice-over.mp3"
+            "ambient": "./assets/story1/sound/ambient.mp3",
+            "backgroundMusic": "./assets/story1/sound/background-music.mp3",
+            "voiceOver": {
+              "nl": "./assets/story1/sound/voiceOver/voice-over-nl.mp3",
+              "en": "./assets/story1/sound/voiceOver/voice-over-en.mp3",
+              "fr": "./assets/story1/sound/voiceOver/voice-over-fr.mp3"
+            }
           }
         },
         "transitionAnimation": {
-          "animationAssetsPath": "transition"
+          "animationAssetsPath": "story1/transition"
         },
         "interactive": [
           { "trigger": "rendier", "effect": "rendier-interactivity" }
         ],
-        "thumbnail": "./assets/fullAnimation/thumbnail.jpg"
+        "thumbnail": "./assets/story1/fullAnimation/thumbnail.jpg"
       },
       {
         "name": "scene2",
         "animation": {
-          "animationAssetsPath": "eagleFlight",
+          "animationAssetsPath": "story1/eagleFlight",
           "audio": {
-            "ambient": "./assets/sound/howling-wind.mp3",
-            "backgroundMusic": "./assets/sound/in-flight.mp3"
+            "ambient": "./assets/story1/sound/howling-wind.mp3",
+            "backgroundMusic": "./assets/story1/sound/in-flight.mp3"
           }
         },
         "transitionAnimation": {
-          "animationAssetsPath": "transition"
+          "animationAssetsPath": "story1/transition"
         },
         "interactive": [{ "trigger": "reindeer", "effect": "tail" }],
-        "thumbnail": "./assets/eagleFlight/thumbnail.jpg"
+        "thumbnail": "./assets/story1/eagleFlight/thumbnail.jpg"
       },
       {
         "name": "scene3",
         "animation": {
-          "animationAssetsPath": "map",
+          "animationAssetsPath": "story1/map",
           "audio": {
-            "ambient": "./assets/sound/train.mp3",
-            "backgroundMusic": "./assets/sound/adventure.mp3"
+            "ambient": "./assets/story1/sound/train.mp3",
+            "backgroundMusic": "./assets/story1/sound/adventure.mp3"
           }
         },
         "transitionAnimation": {
-          "animationAssetsPath": "transition"
+          "animationAssetsPath": "story1/transition"
         },
         "interactive": [
           { "trigger": "rendier", "effect": "rendier-interactivity" }
         ],
-        "thumbnail": "./assets/map/thumbnail.jpg"
+        "thumbnail": "./assets/story1/map/thumbnail.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Story 2",
+    "thumbnail": "https://via.placeholder.com/150",
+    "scenes": [
+      {
+        "name": "scene1",
+        "animation": {
+          "animationAssetsPath": "story2/scene1"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene1/thumbnail.jpg"
+      },
+
+      {
+        "name": "scene1",
+        "animation": {
+          "animationAssetsPath": "story2/scene1"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene1/thumbnail.jpg"
+      },
+      {
+        "name": "scene2",
+        "animation": {
+          "animationAssetsPath": "story2/scene2"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene2/thumbnail.jpg"
+      },
+      {
+        "name": "scene3",
+        "animation": {
+          "animationAssetsPath": "story2/scene3"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene3/thumbnail.jpg"
+      },
+      {
+        "name": "scene4",
+        "animation": {
+          "animationAssetsPath": "story2/scene4"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene4/thumbnail.jpg"
+      },
+      {
+        "name": "scene5",
+        "animation": {
+          "animationAssetsPath": "story2/scene5"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene5/thumbnail.jpg"
+      },
+      {
+        "name": "scene6",
+        "animation": {
+          "animationAssetsPath": "story2/scene6"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene6/thumbnail.jpg"
+      },
+      {
+        "name": "scene7",
+        "animation": {
+          "animationAssetsPath": "story2/scene7"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene7/thumbnail.jpg"
+      },
+      {
+        "name": "scene8",
+        "animation": {
+          "animationAssetsPath": "story2/scene8"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene8/thumbnail.jpg"
+      },
+      {
+        "name": "scene9",
+        "animation": {
+          "animationAssetsPath": "story2/scene9"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene9/thumbnail.jpg"
+      },
+      {
+        "name": "scene10",
+        "animation": {
+          "animationAssetsPath": "story2/scene10"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene10/thumbnail.jpg"
+      },
+      {
+        "name": "scene11",
+        "animation": {
+          "animationAssetsPath": "story2/scene11"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene11/thumbnail.jpg"
+      },
+      {
+        "name": "scene12",
+        "animation": {
+          "animationAssetsPath": "story2/scene12"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene12/thumbnail.jpg"
+      },
+      {
+        "name": "scene13",
+        "animation": {
+          "animationAssetsPath": "story2/scene13"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene13/thumbnail.jpg"
+      },
+      {
+        "name": "scene14",
+        "animation": {
+          "animationAssetsPath": "story2/scene14"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene14/thumbnail.jpg"
+      },
+      {
+        "name": "scene15",
+        "animation": {
+          "animationAssetsPath": "story2/scene15"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene15/thumbnail.jpg"
+      },
+      {
+        "name": "scene16",
+        "animation": {
+          "animationAssetsPath": "story2/scene16"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene16/thumbnail.jpg"
+      },
+      {
+        "name": "scene17",
+        "animation": {
+          "animationAssetsPath": "story2/scene17"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene17/thumbnail.jpg"
+      },
+      {
+        "name": "scene18",
+        "animation": {
+          "animationAssetsPath": "story2/scene18"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "story2/transition"
+        },
+        "thumbnail": "./assets/story2/scene18/thumbnail.jpg"
       }
     ]
   }

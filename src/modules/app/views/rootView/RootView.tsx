@@ -1,11 +1,13 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "../../app.routes";
-import { ScenesProvider } from "../../../story/providers";
+import { ScenesProvider, StoriesProvider } from "../../../story/providers";
 
 export const RootView = () => {
   return (
-    <ScenesProvider>
-      <RouterProvider router={router}></RouterProvider>
-    </ScenesProvider>
+    <StoriesProvider>
+      <ScenesProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </ScenesProvider>
+    </StoriesProvider>
   );
 };

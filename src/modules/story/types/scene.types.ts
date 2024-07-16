@@ -13,7 +13,7 @@ export interface IInteractivity {
 export interface IAudio {
   ambient?: string;
   backgroundMusic?: string;
-  voiceOver?: string;
+  voiceOver?: TVoiceOver;
 }
 
 export interface IAudioTracks {
@@ -25,4 +25,18 @@ export interface IAnimation {
   animationAssetsPath: string;
   animationData?: any;
   audio?: IAudio;
+}
+
+export type TVoiceOver = {
+  [key in ELanguage]: string;
+};
+
+export type TVoiceOverTracks = {
+  [key in ELanguage]: Howl;
+};
+
+export enum ELanguage {
+  NL = "nl",
+  EN = "en",
+  FR = "fr",
 }

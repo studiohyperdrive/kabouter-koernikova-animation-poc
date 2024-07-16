@@ -1,4 +1,4 @@
-import { IAudio, IInteractivity } from "../../types";
+import { ELanguage, IAudio, IInteractivity } from "../../types";
 
 export interface ILottieAnimationProps {
   animationData: any;
@@ -11,4 +11,5 @@ export interface ILottieAnimationProps {
   play?: boolean;
   isAmbientPlaying?: boolean;
   inTransition?: boolean;
+  language: ELanguage;
 }
