@@ -43,6 +43,14 @@ export const useAudio = () => {
     }
   };
 
+  const pauseAllAudioTracks = () => {
+    if (audioTracks) {
+      audioTracks.ambient.pause();
+      audioTracks.backgroundMusic.pause();
+      audioTracks.voiceOver.pause();
+    }
+  };
+
   const unloadAllAudioTracks = () => {
     if (audioTracks) {
       fadeOutAllAudioTracks();
@@ -108,6 +116,7 @@ export const useAudio = () => {
     setAudioTracks,
     createAudioTracks,
     playAllAudioTracks,
+    pauseAllAudioTracks,
     unloadAllAudioTracks,
     fadeInAmbientTracks,
     fadeOutAmbientTracks,

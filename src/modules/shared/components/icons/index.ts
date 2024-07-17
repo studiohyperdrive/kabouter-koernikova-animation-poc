@@ -6,3 +6,5 @@ export * from "./closeIcon";
 export * from "./sceneBookmarkIcon";
 export * from "./currentSceneBookmarkIcon";
 export * from "./playButtonIcon";
+export * from "./pauseIcon";
+export * from "./booksIcon";

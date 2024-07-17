@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import style from "./Button.module.scss";
-import classNames from "classnames";
+import styles from "./Button.module.scss";
+import cx from "classnames/bind";
 
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
@@ -8,13 +8,15 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "tertiary";
 }
 
+const cxBind = cx.bind(styles);
+
 export const Button: FC<IButtonProps> = ({ text, icon, variant, ...props }) => {
   return (
     <button
       {...props}
-      className={classNames(props.className, style.button, {
-        [style["button--secondary"]]: variant === "secondary",
-        [style["button--tertiary"]]: variant === "tertiary",
+      className={cxBind(props.className, "button", {
+        "button--secondary": variant === "secondary",
+        "button--tertiary": variant === "tertiary",
       })}
     >
       {text}

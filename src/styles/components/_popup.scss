@@ -5,8 +5,10 @@
   background: $white;
   width: 70%;
   height: 75%;
-  border-radius: 1rem;
-  padding: 1.5rem;
+  border-radius: 2.5rem;
+  background-image: url("./assets/images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .popup-arrow {

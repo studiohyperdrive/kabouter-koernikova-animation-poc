@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   Button,
   BookmarkIcon,
@@ -6,24 +6,28 @@ import {
   SceneBookmarkIcon,
   CurrentSceneBookmarkIcon,
   PlayButtonIcon,
+  IconButton,
 } from "../../../shared/components";
 import styles from "./SceneSelect.module.scss";
-import classNames from "classnames";
+import cx from "classnames/bind";
 import Popup from "reactjs-popup";
 import { IScene } from "../../types";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { TilesIcon } from "../../../shared/components/icons/tilesIcon";
 
 interface ISceneSelectProps {
   onSelectScene: (sceneIndex: number) => void;
-  totalScenes: number;
-  currentSceneIndex: number;
   scenes: IScene[];
+  className?: string;
 }
+
+const cxBind = cx.bind(styles);
 
 export const SceneSelect: FC<ISceneSelectProps> = ({
   onSelectScene,
-  currentSceneIndex,
-  totalScenes,
   scenes,
+  className,
 }) => {
   const [popupIsOpen, setPopupIsOpen] = useState<boolean>(false);
 
@@ -32,57 +36,82 @@ export const SceneSelect: FC<ISceneSelectProps> = ({
     setPopupIsOpen(false);
   };
 
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
   return (
     <>
-      <div className={classNames(styles["scene-select-container"])}>
-        <Button
-          icon={<BookmarkIcon />}
+      <div className={cxBind("scene-select-container", className)}>
+        <IconButton
+          icon={<TilesIcon />}
           onClick={() => setPopupIsOpen(!popupIsOpen)}
-          variant="secondary"
-          className={classNames(styles.button)}
+          className={cxBind("button")}
         />
-        <div className={classNames(styles.pagination)}>
-          {currentSceneIndex}/{totalScenes}
-        </div>
       </div>
 
-      <Popup open={popupIsOpen} position="center center" className="my-popup">
-        <div className={classNames(styles.modal)}>
-          <Button
-            icon={<CloseIcon />}
-            className={classNames(styles["close-btn"])}
-            variant="tertiary"
-            onClick={() => setPopupIsOpen(false)}
-          />
+      <Popup
+        open={popupIsOpen}
+        position="center center"
+        className="my-popup"
+        closeOnDocumentClick
+        onClose={() => setPopupIsOpen(false)}
+      >
+        <div className={cxBind("modal")}>
+          <h2>Kies een hoofstuk</h2>
 
-          <div className={classNames(styles["scene-select-grid"])}>
+          <Carousel
+            additionalTransfrom={0}
+            autoPlaySpeed={3000}
+            infinite
+            centerMode
+            containerClass={cxBind("carousel-container")}
+            focusOnSelect={true}
+            itemClass={cxBind("carousel-item")}
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            responsive={responsive}
+            rewindWithAnimation={true}
+            shouldResetAutoplay
+            showDots={false}
+            slidesToSlide={1}
+            draggable
+            swipeable
+            transitionDuration={1000}
+          >
             {scenes.map((scene, index) => (
-              <div
-                className={classNames(styles.scene)}
-                onClick={() => onSelect(index)}
-              >
-                <div className={classNames(styles["icon-container"])}>
+              <div className={cxBind("scene")} key={index}>
+                <div
+                  className={cxBind("icon-container")}
+                  onClick={() => onSelect(index)}
+                >
                   <PlayButtonIcon />
                 </div>
 
-                <div className={classNames(styles["bookmark-container"])}>
-                  {currentSceneIndex === index + 1 ? (
-                    <CurrentSceneBookmarkIcon />
-                  ) : (
-                    <SceneBookmarkIcon />
-                  )}
-
-                  <span>{index + 1}</span>
-                </div>
-
-                <div
-                  className={classNames(styles["scene-thumbnail-container"])}
-                >
+                <div className={cxBind("scene-thumbnail-container")}>
                   <img src={scene.thumbnail} alt={scene.name} />
                 </div>
+
+                <div className={cxBind("scene-index")}>{index + 1}</div>
               </div>
             ))}
-          </div>
+          </Carousel>
         </div>
       </Popup>
     </>

@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { ILottieAnimationProps } from "./LottieAnimation.props";
 import { useAudio } from "../../hooks";
 
@@ -15,12 +15,14 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
   isAmbientPlaying = true,
   inTransition = false,
   language,
+  isPaused = false,
 }) => {
   const animationRef = useRef<any>(null);
   const {
     audioTracks,
     createAudioTracks,
     playAllAudioTracks,
+    pauseAllAudioTracks,
     unloadAllAudioTracks,
     fadeInAmbientTracks,
     fadeOutAllAudioTracks,
@@ -94,10 +96,18 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
 
   useEffect(() => {
     switchVoiceOverTrack(audio, language);
-    setTimeout(() => {
-      animationRef.current?.goToAndPlay(0, true);
-    }, 1000);
+    animationRef.current?.goToAndPlay(0, true);
   }, [language]);
+
+  useEffect(() => {
+    if (isPaused) {
+      animationRef.current?.pause();
+      pauseAllAudioTracks();
+    } else {
+      animationRef.current?.play();
+      playAllAudioTracks();
+    }
+  }, [isPaused]);
 
   return (
     <Lottie

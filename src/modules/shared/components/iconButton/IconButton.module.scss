@@ -1,0 +1,12 @@
+@import "../../../../styles/globals.scss";
+
+.button {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: transparent;
+  border: none;
+
+  svg {
+    filter: $drop-shadow;
+  }
+}

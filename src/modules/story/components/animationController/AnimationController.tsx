@@ -2,8 +2,14 @@ import { FC, useEffect, useState } from "react";
 import { ELanguage, IAnimation, IScene } from "../../types";
 import { LottieAnimation } from "../lottieAnimation";
 import styles from "./AnimationController.module.scss";
-import classNames from "classnames";
-import { Button, HomeIcon, MusicNoteIcon } from "../../../shared/components";
+import cx from "classnames/bind";
+import {
+  BooksIcon,
+  IconButton,
+  MusicNoteIcon,
+  PauseIcon,
+  PlayButtonIcon,
+} from "../../../shared/components";
 import { useNavigate } from "react-router-dom";
 import { APP_PATHS } from "../../../app/app.paths";
 import { SceneSelect } from "../sceneSelect";
@@ -12,11 +18,7 @@ interface IAnimationControllerProps {
   scenesData: IScene[];
 }
 
-// enum ESceneChangeAction {
-//   NEXT = "NEXT",
-//   PREVIOUS = "PREVIOUS",
-//   SELECT = "SELECT",
-// }
+const cxBind = cx.bind(styles);
 
 export const AnimationController: FC<IAnimationControllerProps> = ({
   scenesData,
@@ -29,6 +31,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
   >(undefined);
   const [isAmbientPlaying, setIsAmbientPlaying] = useState<boolean>(true);
   const [language, setLanguage] = useState<ELanguage>(ELanguage.NL);
+  const [isPaused, setIspaused] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const changeScene = (index: number) => {
@@ -57,22 +60,6 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
     }
   };
 
-  // const onSceneChange = (action: ESceneChangeAction, index?: number) => {
-  //   switch (action) {
-  //     case ESceneChangeAction.NEXT:
-  //       changeScene((sceneIndex + 1) % scenesData.length);
-  //       break;
-  //     case ESceneChangeAction.PREVIOUS:
-  //       changeScene(sceneIndex === 0 ? scenesData.length - 1 : sceneIndex - 1);
-  //       break;
-  //     case ESceneChangeAction.SELECT:
-  //       changeScene(index as number);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
-
   const onClickReturnToOverview = () => {
     navigate(APP_PATHS.overview);
   };
@@ -94,71 +81,34 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
   }, [scenesData]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className={classNames(styles["story-container"])}>
+    <div className={cxBind("story-container")}>
       {scenesData && (
         <>
           {currentScene && (
-            <div className={classNames(styles["animation-container"])}>
-              <div className={classNames(styles["scene-navigation"])}>
-                <div>
-                  <Button
-                    icon={<HomeIcon />}
-                    onClick={onClickReturnToOverview}
-                    className={styles["back-btn"]}
-                  />
+            <div className={cxBind("animation-container")}>
+              <IconButton
+                icon={<BooksIcon />}
+                onClick={onClickReturnToOverview}
+                className={cxBind("btn", "btn-back")}
+              />
 
-                  <SceneSelect
-                    onSelectScene={(sceneIndex: number) =>
-                      changeScene(sceneIndex)
-                    }
-                    currentSceneIndex={sceneIndex + 1}
-                    totalScenes={scenesData.length}
-                    scenes={scenesData}
-                  />
-                </div>
+              <IconButton
+                icon={<MusicNoteIcon />}
+                onClick={() => setIsAmbientPlaying(!isAmbientPlaying)}
+                className={cxBind("btn", "btn-audio")}
+              />
 
-                <div>
-                  <button onClick={() => setLanguage(ELanguage.NL)}>nl</button>
-                  <button onClick={() => setLanguage(ELanguage.EN)}>en</button>
-                  <button onClick={() => setLanguage(ELanguage.FR)}>fr</button>
-                </div>
+              <SceneSelect
+                onSelectScene={(sceneIndex: number) => changeScene(sceneIndex)}
+                scenes={scenesData}
+                className={cxBind("btn", "btn-chapter")}
+              />
 
-                <div>
-                  <Button
-                    icon={<MusicNoteIcon />}
-                    onClick={() => setIsAmbientPlaying(!isAmbientPlaying)}
-                  />
-                </div>
-
-                {/* <button
-                  onClick={() => onSceneChange(ESceneChangeAction.PREVIOUS)}
-                >
-                  previous
-                </button>
-
-                <div style={{ display: "flex", gap: ".5rem" }}>
-                  {scenesData.map((_scene, index) => (
-                    <button
-                      key={index}
-                      onClick={() =>
-                        onSceneChange(ESceneChangeAction.SELECT, index)
-                      }
-                    >
-                      {index + 1}
-                    </button>
-                  ))}
-                </div>
-
-                <button
-                  onClick={() => onSceneChange(ESceneChangeAction.PREVIOUS)}
-                >
-                  next
-                </button>
-
-                <button onClick={() => setIsPlaying(!isPlaying)}>
-                  {isPlaying ? "Pause" : "Play"}
-                </button> */}
-              </div>
+              <IconButton
+                icon={isPaused ? <PlayButtonIcon /> : <PauseIcon />}
+                onClick={() => setIspaused(!isPaused)}
+                className={cxBind("btn", "btn-pause")}
+              />
 
               {inTransition && currentTransition && (
                 <LottieAnimation
@@ -180,6 +130,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                 isAmbientPlaying={isAmbientPlaying}
                 inTransition={inTransition}
                 language={language}
+                isPaused={isPaused}
               />
             </div>
           )}
