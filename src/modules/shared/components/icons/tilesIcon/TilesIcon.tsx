@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-export const TilesIcon = (props: Props) => {
+export const TilesIcon = () => {
   return (
     <svg
       viewBox="0 0 82 80"

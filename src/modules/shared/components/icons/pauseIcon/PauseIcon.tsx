@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-export const PauseIcon = (props: Props) => {
+export const PauseIcon = () => {
   return (
     <svg
       viewBox="0 0 83 79"

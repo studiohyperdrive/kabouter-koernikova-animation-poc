@@ -66,6 +66,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
 
   useEffect(() => {
     if (scenesData.length !== 0) {
+      setLanguage(ELanguage.NL);
       const scene = scenesData[sceneIndex];
       setCurrentScene(scene);
 

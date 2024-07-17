@@ -1,13 +1,5 @@
-import { FC, useEffect, useState } from "react";
-import {
-  Button,
-  BookmarkIcon,
-  CloseIcon,
-  SceneBookmarkIcon,
-  CurrentSceneBookmarkIcon,
-  PlayButtonIcon,
-  IconButton,
-} from "../../../shared/components";
+import { FC, useState } from "react";
+import { PlayButtonIcon, IconButton } from "../../../shared/components";
 import styles from "./SceneSelect.module.scss";
 import cx from "classnames/bind";
 import Popup from "reactjs-popup";
@@ -38,7 +30,6 @@ export const SceneSelect: FC<ISceneSelectProps> = ({
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 1,
     },
