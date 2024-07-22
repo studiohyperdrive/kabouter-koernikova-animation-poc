@@ -7,9 +7,10 @@ const cxBind = cx.bind(styles);
 
 interface IBaseCarouselProps {
   children: React.ReactNode;
-  className?: string;
-  onSlideChange: (currentItemIndex: number) => void;
   dataLength: number;
+  currentItemIndex: number;
+  onSlideChange: (currentItemIndex: number) => void;
+  className?: string;
 }
 
 export const BaseCarousel: FC<IBaseCarouselProps> = ({
@@ -17,6 +18,7 @@ export const BaseCarousel: FC<IBaseCarouselProps> = ({
   className,
   onSlideChange,
   dataLength,
+  currentItemIndex,
 }) => {
   const responsive = {
     superLargeDesktop: {
@@ -43,8 +45,6 @@ export const BaseCarousel: FC<IBaseCarouselProps> = ({
         ?.firstChild as HTMLElement
     ).dataset.index;
 
-    console.log(document.querySelector(".react-multi-carousel-item--active"));
-
     if (prev > curr) {
       Number(itemIndex) === dataLength - 1
         ? onSlideChange(0)
@@ -62,7 +62,6 @@ export const BaseCarousel: FC<IBaseCarouselProps> = ({
       infinite
       centerMode
       containerClass={cxBind("carousel-container", className)}
-      focusOnSelect={true}
       itemClass={cxBind("carousel-item")}
       keyBoardControl
       minimumTouchDrag={80}
@@ -75,7 +74,6 @@ export const BaseCarousel: FC<IBaseCarouselProps> = ({
       draggable
       swipeable
       transitionDuration={1000}
-      //   afterChange={() => onSlideChange && onSlideChange()}
       beforeChange={(previousSlide, { currentSlide }) =>
         beforeSlideChange(previousSlide, currentSlide)
       }

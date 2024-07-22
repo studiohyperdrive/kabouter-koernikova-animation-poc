@@ -26,6 +26,20 @@
   transform: translate(-50%, -50%);
   width: 4rem;
   height: 4rem;
+  animation-duration: 0.2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    scale: 120%;
+    translate: -50% 0;
+  }
+
+  to {
+    scale: 100%;
+    translate: 0 0;
+  }
 }
 
 .carousel-container {

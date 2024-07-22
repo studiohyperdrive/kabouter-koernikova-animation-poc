@@ -1,199 +1,267 @@
 [
   {
     "title": "Story 1",
-    "thumbnail": "./assets/stories/story1/thumbnail.png",
+    "thumbnail": "/assets/stories/story2/thumbnail.png",
     "scenes": [
       {
         "name": "scene1",
         "animation": {
-          "animationAssetsPath": "stories/story1/fullAnimation",
+          "animationAssetsPath": "stories/story2/scene1",
           "audio": {
-            "ambient": "./assets/stories/story1/sound/ambient.mp3",
-            "backgroundMusic": "./assets/stories/story1/sound/background-music.mp3",
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3",
             "voiceOver": {
-              "nl": "./assets/stories/story1/sound/voiceOver/voice-over-nl.mp3",
-              "en": "./assets/stories/story1/sound/voiceOver/voice-over-nl.mp3",
-              "fr": "./assets/stories/story1/sound/voiceOver/voice-over-nl.mp3"
+              "nl": "/assets/stories/story2/sound/voiceOver/voice-over-nl.mp3",
+              "en": "/assets/stories/story2/sound/voiceOver/voice-over-nl.mp3",
+              "fr": "/assets/stories/story2/sound/voiceOver/voice-over-nl.mp3"
             }
           }
         },
         "transitionAnimation": {
-          "animationAssetsPath": "stories/story1/transition"
+          "animationAssetsPath": "stories/story2/transition"
         },
         "interactive": [
           { "trigger": "rendier", "effect": "rendier-interactivity" }
         ],
-        "thumbnail": "./assets/stories/story1/fullAnimation/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/fullAnimation/thumbnail.jpg"
       },
       {
         "name": "scene2",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene2"
+          "animationAssetsPath": "stories/story2/scene2",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene2/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene2/thumbnail.jpg"
       },
       {
         "name": "scene3",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene3"
+          "animationAssetsPath": "stories/story2/scene3",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene3/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene3/thumbnail.jpg"
       },
       {
         "name": "scene4",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene4"
+          "animationAssetsPath": "stories/story2/scene4",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene4/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene4/thumbnail.jpg"
       },
       {
         "name": "scene5",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene5"
+          "animationAssetsPath": "stories/story2/scene5",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene5/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene5/thumbnail.jpg"
       },
       {
         "name": "scene6",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene6"
+          "animationAssetsPath": "stories/story2/scene6",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene6/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene6/thumbnail.jpg"
       },
       {
         "name": "scene7",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene7"
+          "animationAssetsPath": "stories/story2/scene7",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene7/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene7/thumbnail.jpg"
       },
       {
         "name": "scene8",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene8"
+          "animationAssetsPath": "stories/story2/scene8",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene8/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene8/thumbnail.jpg"
       },
       {
         "name": "scene9",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene9"
+          "animationAssetsPath": "stories/story2/scene9",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene9/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene9/thumbnail.jpg"
       },
       {
         "name": "scene10",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene10"
+          "animationAssetsPath": "stories/story2/scene10",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene10/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene10/thumbnail.jpg"
       },
       {
         "name": "scene11",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene11"
+          "animationAssetsPath": "stories/story2/scene11",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene11/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene11/thumbnail.jpg"
       },
       {
         "name": "scene12",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene12"
+          "animationAssetsPath": "stories/story2/scene12",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene12/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene12/thumbnail.jpg"
       },
       {
         "name": "scene13",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene13"
+          "animationAssetsPath": "stories/story2/scene13",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene13/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene13/thumbnail.jpg"
       },
       {
         "name": "scene14",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene14"
+          "animationAssetsPath": "stories/story2/scene14",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene14/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene14/thumbnail.jpg"
       },
       {
         "name": "scene15",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene15"
+          "animationAssetsPath": "stories/story2/scene15",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene15/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene15/thumbnail.jpg"
       },
       {
         "name": "scene16",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene16"
+          "animationAssetsPath": "stories/story2/scene16",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene16/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene16/thumbnail.jpg"
       },
       {
         "name": "scene17",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene17"
+          "animationAssetsPath": "stories/story2/scene17",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene17/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene17/thumbnail.jpg"
       },
       {
         "name": "scene18",
         "animation": {
-          "animationAssetsPath": "stories/story2/scene18"
+          "animationAssetsPath": "stories/story2/scene18",
+          "audio": {
+            "ambient": "/assets/stories/story2/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story2/sound/background-music.mp3"
+          }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene18/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene18/thumbnail.jpg"
       }
     ]
   }

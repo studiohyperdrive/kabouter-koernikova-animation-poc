@@ -29,16 +29,21 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
   const currenLanguage = languages.find(
     (language) => language.id === currentLanguageId
   );
-  const [currentLanguageIndex, setCurrentLanguageIndex] = useState<number>(0);
+  const currentLanguageIndex = languages.findIndex(
+    (language) => language.id === currentLanguageId
+  );
+  const [currentSlideIndex, setCurrentSlideIndex] =
+    useState<number>(currentLanguageIndex);
+  const [selectedLanguageId, setSelectedLanguageId] = useState<string>(
+    currenLanguage?.id as string
+  );
+  const [orderedLanguages, setOrderedLanguages] =
+    useState<ILanguage[]>(languages);
 
   const onSelect = (lngId: ELanguage) => {
     onSelectLanguage(lngId);
     setPopupIsOpen(false);
   };
-
-  useEffect(() => {
-    console.log(currentLanguageIndex);
-  }, [currentLanguageIndex]);
 
   return (
     <>
@@ -60,10 +65,11 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
       >
         <BaseCarousel
           className={cxBind("carousel-container")}
-          onSlideChange={setCurrentLanguageIndex}
+          onSlideChange={setCurrentSlideIndex}
           dataLength={languages.length}
+          currentItemIndex={currentSlideIndex}
         >
-          {languages.map((language, index) => (
+          {orderedLanguages.map((language, index) => (
             <div
               className={cxBind("language-container")}
               key={`language-option-${index}`}
@@ -72,7 +78,7 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
               <h2>{language.name}</h2>
               <img src={language.asset} alt={language.name} />
 
-              {index === currentLanguageIndex && (
+              {index === currentSlideIndex && (
                 <div
                   className={`react-multi-carousel-item-button ${cxBind(
                     "icon-container"
@@ -84,20 +90,6 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
               )}
             </div>
           ))}
-          {/* {scenes.map((scene, index) => (
-            <div className={cxBind("scene")} key={index}>
-              <div
-                className={cxBind("icon-container")}
-                onClick={() => onSelect(index)}
-              ></div>
-
-              <div className={cxBind("scene-thumbnail-container")}>
-                <img src={scene.thumbnail} alt={scene.name} />
-              </div>
-
-              <div className={cxBind("scene-index")}>{index + 1}</div>
-            </div>
-          ))} */}
         </BaseCarousel>
       </Modal>
     </>

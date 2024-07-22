@@ -1,19 +1,19 @@
 [
   {
     "title": "Story 1",
-    "thumbnail": "./assets/stories/story1/thumbnail.png",
+    "thumbnail": "/assets/stories/story1/thumbnail.png",
     "scenes": [
       {
         "name": "scene1",
         "animation": {
           "animationAssetsPath": "stories/story1/fullAnimation",
           "audio": {
-            "ambient": "./assets/stories/story1/sound/ambient.mp3",
-            "backgroundMusic": "./assets/stories/story1/sound/background-music.mp3",
+            "ambient": "/assets/stories/story1/sound/ambient.mp3",
+            "backgroundMusic": "/assets/stories/story1/sound/background-music.mp3",
             "voiceOver": {
-              "nl": "./assets/stories/story1/sound/voiceOver/voice-over-nl.mp3",
-              "en": "./assets/stories/story1/sound/voiceOver/voice-over-en.mp3",
-              "fr": "./assets/stories/story1/sound/voiceOver/voice-over-fr.mp3"
+              "nl": "/assets/stories/story1/sound/voiceOver/voice-over-nl.mp3",
+              "en": "/assets/stories/story1/sound/voiceOver/voice-over-en.mp3",
+              "fr": "/assets/stories/story1/sound/voiceOver/voice-over-fr.mp3"
             }
           }
         },
@@ -23,30 +23,30 @@
         "interactive": [
           { "trigger": "rendier", "effect": "rendier-interactivity" }
         ],
-        "thumbnail": "./assets/stories/story1/fullAnimation/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story1/fullAnimation/thumbnail.jpg"
       },
       {
         "name": "scene2",
         "animation": {
           "animationAssetsPath": "stories/story1/eagleFlight",
           "audio": {
-            "ambient": "./assets/stories/story1/sound/howling-wind.mp3",
-            "backgroundMusic": "./assets/stories/story1/sound/in-flight.mp3"
+            "ambient": "/assets/stories/story1/sound/howling-wind.mp3",
+            "backgroundMusic": "/assets/stories/story1/sound/in-flight.mp3"
           }
         },
         "transitionAnimation": {
           "animationAssetsPath": "stories/story1/transition"
         },
         "interactive": [{ "trigger": "reindeer", "effect": "tail" }],
-        "thumbnail": "./assets/stories/story1/eagleFlight/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story1/eagleFlight/thumbnail.jpg"
       },
       {
         "name": "scene3",
         "animation": {
           "animationAssetsPath": "stories/story1/map",
           "audio": {
-            "ambient": "./assets/stories/story1/sound/train.mp3",
-            "backgroundMusic": "./assets/stories/story1/sound/adventure.mp3"
+            "ambient": "/assets/stories/story1/sound/train.mp3",
+            "backgroundMusic": "/assets/stories/story1/sound/adventure.mp3"
           }
         },
         "transitionAnimation": {
@@ -55,7 +55,7 @@
         "interactive": [
           { "trigger": "rendier", "effect": "rendier-interactivity" }
         ],
-        "thumbnail": "./assets/stories/story1/map/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story1/map/thumbnail.jpg"
       }
     ]
   },
@@ -71,7 +71,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene1/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene1/thumbnail.jpg"
       },
 
       {
@@ -82,7 +82,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene1/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene1/thumbnail.jpg"
       },
       {
         "name": "scene2",
@@ -92,7 +92,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene2/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene2/thumbnail.jpg"
       },
       {
         "name": "scene3",
@@ -102,7 +102,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene3/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene3/thumbnail.jpg"
       },
       {
         "name": "scene4",
@@ -112,7 +112,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene4/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene4/thumbnail.jpg"
       },
       {
         "name": "scene5",
@@ -122,7 +122,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene5/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene5/thumbnail.jpg"
       },
       {
         "name": "scene6",
@@ -132,7 +132,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene6/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene6/thumbnail.jpg"
       },
       {
         "name": "scene7",
@@ -142,7 +142,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene7/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene7/thumbnail.jpg"
       },
       {
         "name": "scene8",
@@ -152,7 +152,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene8/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene8/thumbnail.jpg"
       },
       {
         "name": "scene9",
@@ -162,7 +162,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene9/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene9/thumbnail.jpg"
       },
       {
         "name": "scene10",
@@ -172,7 +172,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene10/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene10/thumbnail.jpg"
       },
       {
         "name": "scene11",
@@ -182,7 +182,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene11/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene11/thumbnail.jpg"
       },
       {
         "name": "scene12",
@@ -192,7 +192,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene12/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene12/thumbnail.jpg"
       },
       {
         "name": "scene13",
@@ -202,7 +202,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene13/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene13/thumbnail.jpg"
       },
       {
         "name": "scene14",
@@ -212,7 +212,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene14/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene14/thumbnail.jpg"
       },
       {
         "name": "scene15",
@@ -222,7 +222,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene15/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene15/thumbnail.jpg"
       },
       {
         "name": "scene16",
@@ -232,7 +232,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene16/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene16/thumbnail.jpg"
       },
       {
         "name": "scene17",
@@ -242,7 +242,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene17/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene17/thumbnail.jpg"
       },
       {
         "name": "scene18",
@@ -252,7 +252,7 @@
         "transitionAnimation": {
           "animationAssetsPath": "stories/story2/transition"
         },
-        "thumbnail": "./assets/stories/story2/scene18/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene18/thumbnail.jpg"
       }
     ]
   }
