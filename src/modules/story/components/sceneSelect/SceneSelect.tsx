@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import {
   PlayButtonIcon,
   IconButton,
@@ -50,7 +50,6 @@ export const SceneSelect: FC<ISceneSelectProps> = ({
         <h2>Kies een hoofstuk</h2>
 
         <BaseCarousel
-          currentItemIndex={currentSceneIndex}
           onSlideChange={setCurrentSceneIndex}
           dataLength={scenes.length}
         >

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import {
   IconButton,
   PinkButtonIcon,
@@ -34,11 +34,6 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
   );
   const [currentSlideIndex, setCurrentSlideIndex] =
     useState<number>(currentLanguageIndex);
-  const [selectedLanguageId, setSelectedLanguageId] = useState<string>(
-    currenLanguage?.id as string
-  );
-  const [orderedLanguages, setOrderedLanguages] =
-    useState<ILanguage[]>(languages);
 
   const onSelect = (lngId: ELanguage) => {
     onSelectLanguage(lngId);
@@ -67,9 +62,8 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
           className={cxBind("carousel-container")}
           onSlideChange={setCurrentSlideIndex}
           dataLength={languages.length}
-          currentItemIndex={currentSlideIndex}
         >
-          {orderedLanguages.map((language, index) => (
+          {languages.map((language, index) => (
             <div
               className={cxBind("language-container")}
               key={`language-option-${index}`}

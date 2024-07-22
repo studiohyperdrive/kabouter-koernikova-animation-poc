@@ -8,7 +8,6 @@ const cxBind = cx.bind(styles);
 interface IBaseCarouselProps {
   children: React.ReactNode;
   dataLength: number;
-  currentItemIndex: number;
   onSlideChange: (currentItemIndex: number) => void;
   className?: string;
 }
@@ -18,7 +17,6 @@ export const BaseCarousel: FC<IBaseCarouselProps> = ({
   className,
   onSlideChange,
   dataLength,
-  currentItemIndex,
 }) => {
   const responsive = {
     superLargeDesktop: {
