@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   IconButton,
   PinkButtonIcon,
@@ -9,6 +9,7 @@ import { Modal } from "../modal";
 import cx from "classnames/bind";
 import styles from "./LanguageSelect.module.scss";
 import { ELanguage, ILanguage } from "../../types";
+import { swap } from "ramda";
 
 const cxBind = cx.bind(styles);
 
@@ -32,13 +33,24 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
   const currentLanguageIndex = languages.findIndex(
     (language) => language.id === currentLanguageId
   );
-  const [currentSlideIndex, setCurrentSlideIndex] =
-    useState<number>(currentLanguageIndex);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
+  const [orderedLanguages, setOrderedLanguages] =
+    useState<ILanguage[]>(languages);
 
   const onSelect = (lngId: ELanguage) => {
     onSelectLanguage(lngId);
     setPopupIsOpen(false);
   };
+
+  useEffect(() => {
+    console.log(currentSlideIndex);
+    if (popupIsOpen) {
+      setCurrentSlideIndex(0);
+      setOrderedLanguages(swap(0, currentSlideIndex, languages));
+
+      console.log(languages);
+    }
+  }, [popupIsOpen]);
 
   return (
     <>
@@ -63,7 +75,7 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
           onSlideChange={setCurrentSlideIndex}
           dataLength={languages.length}
         >
-          {languages.map((language, index) => (
+          {orderedLanguages.map((language, index) => (
             <div
               className={cxBind("language-container")}
               key={`language-option-${index}`}
