@@ -30,9 +30,6 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
   const currenLanguage = languages.find(
     (language) => language.id === currentLanguageId
   );
-  const currentLanguageIndex = languages.findIndex(
-    (language) => language.id === currentLanguageId
-  );
   const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
   const [orderedLanguages, setOrderedLanguages] =
     useState<ILanguage[]>(languages);
