@@ -12,8 +12,8 @@
             "backgroundMusic": "./assets/stories/story1/sound/background-music.mp3",
             "voiceOver": {
               "nl": "./assets/stories/story1/sound/voiceOver/voice-over-nl.mp3",
-              "en": "./assets/stories/story1/sound/voiceOver/voice-over-nl.mp3",
-              "fr": "./assets/stories/story1/sound/voiceOver/voice-over-nl.mp3"
+              "en": "./assets/stories/story1/sound/voiceOver/voice-over-en.mp3",
+              "fr": "./assets/stories/story1/sound/voiceOver/voice-over-fr.mp3"
             }
           }
         },
@@ -24,6 +24,65 @@
           { "trigger": "rendier", "effect": "rendier-interactivity" }
         ],
         "thumbnail": "./assets/stories/story1/fullAnimation/thumbnail.jpg"
+      },
+      {
+        "name": "scene2",
+        "animation": {
+          "animationAssetsPath": "stories/story1/eagleFlight",
+          "audio": {
+            "ambient": "./assets/stories/story1/sound/howling-wind.mp3",
+            "backgroundMusic": "./assets/stories/story1/sound/in-flight.mp3"
+          }
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "stories/story1/transition"
+        },
+        "interactive": [{ "trigger": "reindeer", "effect": "tail" }],
+        "thumbnail": "./assets/stories/story1/eagleFlight/thumbnail.jpg"
+      },
+      {
+        "name": "scene3",
+        "animation": {
+          "animationAssetsPath": "stories/story1/map",
+          "audio": {
+            "ambient": "./assets/stories/story1/sound/train.mp3",
+            "backgroundMusic": "./assets/stories/story1/sound/adventure.mp3"
+          }
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "stories/story1/transition"
+        },
+        "interactive": [
+          { "trigger": "rendier", "effect": "rendier-interactivity" }
+        ],
+        "thumbnail": "./assets/stories/story1/map/thumbnail.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Story 2",
+    "thumbnail": "https://via.placeholder.com/150",
+    "scenes": [
+      {
+        "name": "scene1",
+        "animation": {
+          "animationAssetsPath": "stories/story2/scene1"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "stories/story2/transition"
+        },
+        "thumbnail": "./assets/stories/story2/scene1/thumbnail.jpg"
+      },
+
+      {
+        "name": "scene1",
+        "animation": {
+          "animationAssetsPath": "stories/story2/scene1"
+        },
+        "transitionAnimation": {
+          "animationAssetsPath": "stories/story2/transition"
+        },
+        "thumbnail": "./assets/stories/story2/scene1/thumbnail.jpg"
       },
       {
         "name": "scene2",

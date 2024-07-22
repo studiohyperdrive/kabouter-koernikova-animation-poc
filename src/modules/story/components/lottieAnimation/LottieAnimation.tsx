@@ -2,6 +2,10 @@ import Lottie from "lottie-react";
 import { FC, useEffect, useRef } from "react";
 import { ILottieAnimationProps } from "./LottieAnimation.props";
 import { useAudio } from "../../hooks";
+import styles from "./LottieAnimation.module.scss";
+import cx from "classnames/bind";
+
+const cxBind = cx.bind(styles);
 
 export const LottieAnimation: FC<ILottieAnimationProps> = ({
   animationData,
@@ -117,6 +121,7 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
       assetsPath={`assets/${animationAssetsPath}/images/`}
       lottieRef={animationRef}
       style={{ zIndex: zIndex, position: "absolute", top: 0, left: 0 }}
+      className={cxBind("animation")}
     />
   );
 };

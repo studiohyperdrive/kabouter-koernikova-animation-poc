@@ -1,3 +1,5 @@
+import { ELanguage } from "./language.types";
+
 export interface IScene {
   name: string;
   animation: IAnimation;
@@ -34,9 +36,3 @@ export type TVoiceOver = {
 export type TVoiceOverTracks = {
   [key in ELanguage]: Howl;
 };
-
-export enum ELanguage {
-  NL = "nl",
-  EN = "en",
-  FR = "fr",
-}

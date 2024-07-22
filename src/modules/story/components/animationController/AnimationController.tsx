@@ -13,6 +13,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import { APP_PATHS } from "../../../app/app.paths";
 import { SceneSelect } from "../sceneSelect";
+import { LanguageSelect } from "../languageSelect";
+import LanguagesJson from "../../data/languages.json";
 
 interface IAnimationControllerProps {
   scenesData: IScene[];
@@ -64,6 +66,11 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
     navigate(APP_PATHS.overview);
   };
 
+  const onLanguageChange = (languageId: ELanguage) => {
+    setLanguage(languageId);
+    setIspaused(false);
+  };
+
   useEffect(() => {
     if (scenesData.length !== 0) {
       setLanguage(ELanguage.NL);
@@ -109,6 +116,18 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                 icon={isPaused ? <PlayButtonIcon /> : <PauseIcon />}
                 onClick={() => setIspaused(!isPaused)}
                 className={cxBind("btn", "btn-pause")}
+              />
+
+              <LanguageSelect
+                currentLanguageId={language}
+                languages={LanguagesJson.map((language) => ({
+                  ...language,
+                  id: language.id as ELanguage,
+                }))}
+                onSelectLanguage={(languageId: ELanguage) =>
+                  onLanguageChange(languageId)
+                }
+                className={cxBind("btn", "btn-language")}
               />
 
               {inTransition && currentTransition && (

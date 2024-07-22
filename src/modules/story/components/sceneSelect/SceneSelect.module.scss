@@ -5,50 +5,9 @@
   justify-content: center;
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 3.4rem;
-  height: 4rem;
-  position: absolute;
-  bottom: -0.5rem;
-  color: $white;
-  background-color: $dark-grey;
-  @include button-border-custom-color($darkest-grey);
-  border-radius: $button-border-radius;
-  font-size: 0.875rem;
-}
-
-.close-btn {
-  position: absolute;
-  right: -2rem;
-  top: -2rem;
-  z-index: 10;
-}
-
-.scene-select-grid {
-  // height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.25rem;
-  padding: 0.5rem;
-}
-
 .modal {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: $dark-blue;
-
   h2 {
-    margin-bottom: 1rem;
     color: $gold;
-    font-size: 2.5rem;
   }
 }
 
@@ -59,8 +18,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  // height: 20rem;
-  // width: 30rem !important;
   padding: 0 1.5rem;
 
   &-thumbnail-container {
@@ -88,22 +45,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.bookmark-container {
-  position: absolute;
-  top: -0.5rem;
-  left: 0.75rem;
-
-  span {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    color: $white;
-    font-size: 2rem;
-    font-weight: bold;
-    transform: translate(-50%, -50%);
-  }
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
 }
 
 .carousel-container {

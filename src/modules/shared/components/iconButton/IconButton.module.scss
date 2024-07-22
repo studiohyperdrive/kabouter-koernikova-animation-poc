@@ -5,6 +5,16 @@
   height: 4.5rem;
   background-color: transparent;
   border: none;
+  display: block;
+  transition: all 0.2s ease;
+
+  &:active {
+    transform: translateY(0.2rem) scale(0.95);
+
+    svg {
+      filter: none;
+    }
+  }
 
   svg {
     filter: $drop-shadow;

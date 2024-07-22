@@ -1,12 +1,15 @@
 import { FC, useState } from "react";
-import { PlayButtonIcon, IconButton } from "../../../shared/components";
+import {
+  PlayButtonIcon,
+  IconButton,
+  TilesIcon,
+} from "../../../shared/components";
 import styles from "./SceneSelect.module.scss";
 import cx from "classnames/bind";
-import Popup from "reactjs-popup";
 import { IScene } from "../../types";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { TilesIcon } from "../../../shared/components/icons/tilesIcon";
+import { Modal } from "../modal";
+import { BaseCarousel } from "../baseCarousel";
 
 interface ISceneSelectProps {
   onSelectScene: (sceneIndex: number) => void;
@@ -22,30 +25,13 @@ export const SceneSelect: FC<ISceneSelectProps> = ({
   className,
 }) => {
   const [popupIsOpen, setPopupIsOpen] = useState<boolean>(false);
+  const [currentSceneIndex, setCurrentSceneIndex] = useState<number>(0);
 
   const onSelect = (sceneIndex: number) => {
     onSelectScene(sceneIndex);
     setPopupIsOpen(false);
   };
 
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 1,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
   return (
     <>
       <div className={cxBind("scene-select-container", className)}>
@@ -56,55 +42,39 @@ export const SceneSelect: FC<ISceneSelectProps> = ({
         />
       </div>
 
-      <Popup
-        open={popupIsOpen}
-        position="center center"
-        className="my-popup"
-        closeOnDocumentClick
+      <Modal
+        isOpen={popupIsOpen}
         onClose={() => setPopupIsOpen(false)}
+        className={cxBind("modal")}
       >
-        <div className={cxBind("modal")}>
-          <h2>Kies een hoofstuk</h2>
+        <h2>Kies een hoofstuk</h2>
 
-          <Carousel
-            additionalTransfrom={0}
-            autoPlaySpeed={3000}
-            infinite
-            centerMode
-            containerClass={cxBind("carousel-container")}
-            focusOnSelect={true}
-            itemClass={cxBind("carousel-item")}
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            responsive={responsive}
-            rewindWithAnimation={true}
-            shouldResetAutoplay
-            showDots={false}
-            slidesToSlide={1}
-            draggable
-            swipeable
-            transitionDuration={1000}
-          >
-            {scenes.map((scene, index) => (
-              <div className={cxBind("scene")} key={index}>
+        <BaseCarousel
+          onSlideChange={setCurrentSceneIndex}
+          dataLength={scenes.length}
+        >
+          {scenes.map((scene, index) => (
+            <div className={cxBind("scene")} key={index} data-index={index}>
+              {index === currentSceneIndex && (
                 <div
-                  className={cxBind("icon-container")}
+                  className={`react-multi-carousel-item-button ${cxBind(
+                    "icon-container"
+                  )}`}
                   onClick={() => onSelect(index)}
                 >
                   <PlayButtonIcon />
                 </div>
+              )}
 
-                <div className={cxBind("scene-thumbnail-container")}>
-                  <img src={scene.thumbnail} alt={scene.name} />
-                </div>
-
-                <div className={cxBind("scene-index")}>{index + 1}</div>
+              <div className={cxBind("scene-thumbnail-container")}>
+                <img src={scene.thumbnail} alt={scene.name} />
               </div>
-            ))}
-          </Carousel>
-        </div>
-      </Popup>
+
+              <div className={cxBind("scene-index")}>{index + 1}</div>
+            </div>
+          ))}
+        </BaseCarousel>
+      </Modal>
     </>
   );
 };

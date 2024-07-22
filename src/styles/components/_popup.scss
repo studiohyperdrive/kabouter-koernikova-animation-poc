@@ -9,6 +9,7 @@
   background-image: url("./assets/images/background.png");
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 .popup-arrow {
@@ -21,7 +22,7 @@
 }
 
 .popup-overlay {
-  backdrop-filter: blur(0.5rem);
+  backdrop-filter: brightness(0.5) blur(5px);
 }
 
 [data-popup="tooltip"].popup-overlay {

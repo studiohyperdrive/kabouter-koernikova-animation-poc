@@ -8,3 +8,6 @@ export * from "./currentSceneBookmarkIcon";
 export * from "./playButtonIcon";
 export * from "./pauseIcon";
 export * from "./booksIcon";
+export * from "./pinkButtonIcon";
+export * from "./tilesIcon";
+export * from "./playBubbleIcon";

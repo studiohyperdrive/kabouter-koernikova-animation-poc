@@ -12,6 +12,10 @@
   height: 100%;
 }
 
+.animation {
+  width: 100%;
+}
+
 .scene-navigation {
   width: 100%;
   display: flex;
@@ -37,6 +41,10 @@
   position: absolute;
   z-index: 15;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &-back {
     top: 1rem;
     left: 1rem;
@@ -55,5 +63,10 @@
   &-pause {
     bottom: 1rem;
     left: 50%;
+  }
+
+  &-language {
+    bottom: 1rem;
+    right: 1rem;
   }
 }

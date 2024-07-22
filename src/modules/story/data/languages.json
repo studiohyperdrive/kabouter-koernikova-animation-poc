@@ -2,16 +2,16 @@
   {
     "id": "en",
     "name": "English",
-    "image": "./assets/images/languages/en.svg"
+    "asset": "./assets/languages/en.svg"
   },
   {
     "id": "nl",
     "name": "Nederlands",
-    "image": "./assets/images/languages/nl.svg"
+    "asset": "./assets/languages/nl.svg"
   },
   {
     "id": "fr",
     "name": "Français",
-    "image": "./assets/images/languages/fr.svg"
+    "asset": "./assets/languages/fr.svg"
   }
 ]
