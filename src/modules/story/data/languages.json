@@ -1,13 +1,13 @@
 [
   {
-    "id": "en",
-    "name": "English",
-    "asset": "/assets/languages/en.svg"
-  },
-  {
     "id": "nl",
     "name": "Nederlands",
     "asset": "/assets/languages/nl.svg"
+  },
+  {
+    "id": "en",
+    "name": "English",
+    "asset": "/assets/languages/en.svg"
   },
   {
     "id": "fr",

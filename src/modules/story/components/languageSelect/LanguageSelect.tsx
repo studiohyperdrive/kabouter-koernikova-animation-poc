@@ -81,16 +81,17 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
               <h2>{language.name}</h2>
               <img src={language.asset} alt={language.name} />
 
-              {index === currentSlideIndex && (
-                <div
-                  className={`react-multi-carousel-item-button ${cxBind(
-                    "icon-container"
-                  )}`}
-                  onClick={() => onSelect(language.id)}
-                >
-                  <PlayBubbleIcon />
-                </div>
-              )}
+              {index === currentSlideIndex &&
+                language.id !== currenLanguage?.id && (
+                  <div
+                    className={`react-multi-carousel-item-button ${cxBind(
+                      "icon-container"
+                    )}`}
+                    onClick={() => onSelect(language.id)}
+                  >
+                    <PlayBubbleIcon />
+                  </div>
+                )}
             </div>
           ))}
         </BaseCarousel>
