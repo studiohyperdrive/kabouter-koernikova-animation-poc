@@ -23,7 +23,7 @@
         "interactive": [
           { "trigger": "rendier", "effect": "rendier-interactivity" }
         ],
-        "thumbnail": "/assets/stories/story2/fullAnimation/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story2/scene1/thumbnail.jpg"
       },
       {
         "name": "scene2",
