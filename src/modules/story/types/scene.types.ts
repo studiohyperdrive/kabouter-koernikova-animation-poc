@@ -5,6 +5,7 @@ export interface IScene {
   animation: IAnimation;
   thumbnail?: string;
   transitionAnimation?: IAnimation;
+  idleAnimation?: IAnimation;
   interactive?: IInteractivity[];
 }
 export interface IInteractivity {

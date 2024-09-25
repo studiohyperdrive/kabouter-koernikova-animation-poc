@@ -20,6 +20,7 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
   inTransition = false,
   language,
   isPaused = false,
+  onCompleted,
 }) => {
   const animationRef = useRef<any>(null);
   const {
@@ -113,6 +114,11 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
     }
   }, [isPaused]);
 
+  const onAnimationCompleted = () => {
+    console.log("Animation completed");
+    onCompleted && onCompleted(true);
+  };
+
   return (
     <Lottie
       animationData={animationData}
@@ -122,6 +128,7 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
       lottieRef={animationRef}
       style={{ zIndex: zIndex, position: "absolute", top: 0, left: 0 }}
       className={cxBind("animation")}
+      onComplete={() => onAnimationCompleted()}
     />
   );
 };

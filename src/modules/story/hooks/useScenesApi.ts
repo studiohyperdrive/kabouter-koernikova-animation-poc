@@ -24,10 +24,17 @@ export const useScenesApi = () => {
         );
 
         let transitionAnimationData = undefined;
+        let idleAnimationData = undefined;
 
         if (scene.transitionAnimation) {
           transitionAnimationData = await fetchAnimationData(
             scene.transitionAnimation.animationAssetsPath
+          );
+        }
+
+        if (scene.idleAnimation) {
+          idleAnimationData = await fetchAnimationData(
+            scene.idleAnimation.animationAssetsPath
           );
         }
 
@@ -42,6 +49,14 @@ export const useScenesApi = () => {
                 transitionAnimation: {
                   ...scene.transitionAnimation,
                   animationData: transitionAnimationData,
+                },
+              }
+            : {}),
+          ...(scene.idleAnimation
+            ? {
+                idleAnimation: {
+                  ...scene.idleAnimation,
+                  animationData: idleAnimationData,
                 },
               }
             : {}),

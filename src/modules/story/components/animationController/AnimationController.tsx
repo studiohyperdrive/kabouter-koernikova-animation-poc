@@ -15,6 +15,7 @@ import { APP_PATHS } from "../../../app/app.paths";
 import { SceneSelect } from "../sceneSelect";
 import { LanguageSelect } from "../languageSelect";
 import LanguagesJson from "../../data/languages.json";
+import { is, set } from "ramda";
 
 interface IAnimationControllerProps {
   scenesData: IScene[];
@@ -31,17 +32,27 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
   const [currentTransition, setCurrentTransition] = useState<
     IAnimation | undefined
   >(undefined);
+  const [currentAnimation, setCurrentAnimation] = useState<
+    IAnimation | undefined
+  >(undefined);
   const [isAmbientPlaying, setIsAmbientPlaying] = useState<boolean>(true);
   const [language, setLanguage] = useState<ELanguage>(ELanguage.NL);
   const [isPaused, setIspaused] = useState<boolean>(false);
+  const [isSceneIdle, setIsSceneIdle] = useState<boolean>(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    console.log(isSceneIdle);
+  }, [isSceneIdle]);
+
   const changeScene = (index: number) => {
+    setIsSceneIdle(false);
     if (currentScene?.transitionAnimation) {
       setInTransition(true);
       setTimeout(() => {
         setSceneIndex(index);
         setCurrentScene(scenesData[index]);
+        setCurrentAnimation(scenesData[index].animation);
       }, 1000);
 
       setTimeout(() => {
@@ -59,6 +70,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
     } else {
       setSceneIndex(index);
       setCurrentScene(scenesData[index]);
+      setCurrentAnimation(scenesData[index].animation);
     }
   };
 
@@ -76,6 +88,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
       setLanguage(ELanguage.NL);
       const scene = scenesData[sceneIndex];
       setCurrentScene(scene);
+      setCurrentAnimation(scene.animation);
 
       if (scene?.transitionAnimation) {
         setCurrentTransition({
@@ -140,18 +153,36 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                 />
               )}
 
-              <LottieAnimation
-                animationData={currentScene.animation.animationData}
-                animationAssetsPath={currentScene.animation.animationAssetsPath}
-                audio={currentScene.animation.audio}
-                interactive={currentScene.interactive}
-                autoplay={true}
-                loop={true}
-                isAmbientPlaying={isAmbientPlaying}
-                inTransition={inTransition}
-                language={language}
-                isPaused={isPaused}
-              />
+              {currentScene.idleAnimation && (
+                <LottieAnimation
+                  animationData={currentScene.idleAnimation.animationData}
+                  animationAssetsPath={
+                    currentScene.idleAnimation.animationAssetsPath
+                  }
+                  zIndex={isSceneIdle ? 10 : -10}
+                  play={isSceneIdle ? true : false}
+                  loop={true}
+                  language={language}
+                />
+              )}
+
+              {currentAnimation && (
+                <LottieAnimation
+                  animationData={currentScene.animation.animationData}
+                  animationAssetsPath={
+                    currentScene.animation.animationAssetsPath
+                  }
+                  audio={currentScene.animation.audio}
+                  interactive={currentScene.interactive}
+                  autoplay={true}
+                  loop={false}
+                  isAmbientPlaying={isAmbientPlaying}
+                  inTransition={inTransition}
+                  language={language}
+                  isPaused={isPaused}
+                  onCompleted={setIsSceneIdle}
+                />
+              )}
             </div>
           )}
         </>

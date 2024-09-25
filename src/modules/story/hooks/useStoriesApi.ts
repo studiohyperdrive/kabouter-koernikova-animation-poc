@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { StoriesContext } from "../providers";
-import StoriesJson from "../data/stories.json";
+import StoriesJson from "../data/stories-V2.json";
 
 export const useStoriesApi = () => {
   const { stories, setStories } = useContext(StoriesContext);

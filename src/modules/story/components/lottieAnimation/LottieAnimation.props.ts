@@ -13,4 +13,5 @@ export interface ILottieAnimationProps {
   isAmbientPlaying?: boolean;
   inTransition?: boolean;
   isPaused?: boolean;
+  onCompleted?: (isIdle: boolean) => void;
 }
