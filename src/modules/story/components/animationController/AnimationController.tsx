@@ -15,7 +15,6 @@ import { APP_PATHS } from "../../../app/app.paths";
 import { SceneSelect } from "../sceneSelect";
 import { LanguageSelect } from "../languageSelect";
 import LanguagesJson from "../../data/languages.json";
-import { is, set } from "ramda";
 
 interface IAnimationControllerProps {
   scenesData: IScene[];
