@@ -31,9 +31,6 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
   const [currentTransition, setCurrentTransition] = useState<
     IAnimation | undefined
   >(undefined);
-  const [currentAnimation, setCurrentAnimation] = useState<
-    IAnimation | undefined
-  >(undefined);
   const [isAmbientPlaying, setIsAmbientPlaying] = useState<boolean>(true);
   const [language, setLanguage] = useState<ELanguage>(ELanguage.NL);
   const [isPaused, setIspaused] = useState<boolean>(false);
@@ -51,7 +48,6 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
       setTimeout(() => {
         setSceneIndex(index);
         setCurrentScene(scenesData[index]);
-        setCurrentAnimation(scenesData[index].animation);
       }, 1000);
 
       setTimeout(() => {
@@ -69,7 +65,6 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
     } else {
       setSceneIndex(index);
       setCurrentScene(scenesData[index]);
-      setCurrentAnimation(scenesData[index].animation);
     }
   };
 
@@ -87,7 +82,6 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
       setLanguage(ELanguage.NL);
       const scene = scenesData[sceneIndex];
       setCurrentScene(scene);
-      setCurrentAnimation(scene.animation);
 
       if (scene?.transitionAnimation) {
         setCurrentTransition({
@@ -165,23 +159,19 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                 />
               )}
 
-              {currentAnimation && (
-                <LottieAnimation
-                  animationData={currentScene.animation.animationData}
-                  animationAssetsPath={
-                    currentScene.animation.animationAssetsPath
-                  }
-                  audio={currentScene.animation.audio}
-                  interactive={currentScene.interactive}
-                  autoplay={true}
-                  loop={false}
-                  isAmbientPlaying={isAmbientPlaying}
-                  inTransition={inTransition}
-                  language={language}
-                  isPaused={isPaused}
-                  onCompleted={setIsSceneIdle}
-                />
-              )}
+              <LottieAnimation
+                animationData={currentScene.animation.animationData}
+                animationAssetsPath={currentScene.animation.animationAssetsPath}
+                audio={currentScene.animation.audio}
+                interactive={currentScene.interactive}
+                autoplay={true}
+                loop={false}
+                isAmbientPlaying={isAmbientPlaying}
+                inTransition={inTransition}
+                language={language}
+                isPaused={isPaused}
+                onCompleted={setIsSceneIdle}
+              />
             </div>
           )}
         </>
