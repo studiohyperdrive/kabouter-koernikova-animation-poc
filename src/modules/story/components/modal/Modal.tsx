@@ -24,6 +24,7 @@ export const Modal: FC<IModalProps> = ({
       position="center center"
       closeOnDocumentClick
       onClose={onClose}
+      className="chapter-select"
     >
       <div className={cxBind("modal", className)}>{children}</div>
     </Popup>

@@ -40,12 +40,9 @@ export const LanguageSelect: FC<ILanguageSelectProps> = ({
   };
 
   useEffect(() => {
-    console.log(currentSlideIndex);
     if (popupIsOpen) {
       setCurrentSlideIndex(0);
       setOrderedLanguages(swap(0, currentSlideIndex, languages));
-
-      console.log(languages);
     }
   }, [popupIsOpen]);
 

@@ -1,6 +1,7 @@
 @import "../globals";
 
-.popup-content {
+.popup-content.chapter-select-content {
+  background-color: red;
   margin: auto;
   background: $white;
   width: 70%;

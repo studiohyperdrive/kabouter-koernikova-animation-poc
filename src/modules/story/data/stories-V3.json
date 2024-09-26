@@ -1,0 +1,222 @@
+[
+  {
+    "title": "Story 1",
+    "thumbnail": "/assets/stories/story2/thumbnail.png",
+    "scenes": [
+      {
+        "name": "01",
+        "animation": {
+          "animationAssetsPath": "stories/story3/01",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/01/images/aud_0.mp3",
+              "en": "/assets/stories/story3/01/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/01/images/aud_0.mp3"
+            }
+          }
+        },
+        "interactive": [
+          { "trigger": "rendier", "effect": "rendier-interactivity" }
+        ],
+        "thumbnail": "/assets/stories/story2/scene1/thumbnail.jpg"
+      },
+      {
+        "name": "02",
+        "animation": {
+          "animationAssetsPath": "stories/story3/02",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/02/images/aud_0.mp3",
+              "en": "/assets/stories/story3/02/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/02/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene2/thumbnail.jpg"
+      },
+      {
+        "name": "03",
+        "animation": {
+          "animationAssetsPath": "stories/story3/03",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/03/images/aud_0.mp3",
+              "en": "/assets/stories/story3/03/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/03/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene3/thumbnail.jpg"
+      },
+      {
+        "name": "04",
+        "animation": {
+          "animationAssetsPath": "stories/story3/04",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/04/images/aud_0.mp3",
+              "en": "/assets/stories/story3/04/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/04/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene4/thumbnail.jpg"
+      },
+      {
+        "name": "05",
+        "animation": {
+          "animationAssetsPath": "stories/story3/05",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/05/images/aud_0.mp3",
+              "en": "/assets/stories/story3/05/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/05/images/aud_0.mp3"
+            }
+          }
+        },
+
+        "thumbnail": "/assets/stories/story2/scene5/thumbnail.jpg"
+      },
+      {
+        "name": "06",
+        "animation": {
+          "animationAssetsPath": "stories/story3/06",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/06/images/aud_0.mp3",
+              "en": "/assets/stories/story3/06/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/06/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene6/thumbnail.jpg"
+      },
+      {
+        "name": "07",
+        "animation": {
+          "animationAssetsPath": "stories/story3/07",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/07/images/aud_0.mp3",
+              "en": "/assets/stories/story3/07/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/07/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene7/thumbnail.jpg"
+      },
+      {
+        "name": "08",
+        "animation": {
+          "animationAssetsPath": "stories/story3/08",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/08/images/aud_0.mp3",
+              "en": "/assets/stories/story3/08/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/08/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene8/thumbnail.jpg"
+      },
+      {
+        "name": "09",
+        "animation": {
+          "animationAssetsPath": "stories/story3/09",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/09/images/aud_0.mp3",
+              "en": "/assets/stories/story3/09/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/09/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene9/thumbnail.jpg"
+      },
+      {
+        "name": "10",
+        "animation": {
+          "animationAssetsPath": "stories/story3/10",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/10/images/aud_0.mp3",
+              "en": "/assets/stories/story3/10/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/10/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene10/thumbnail.jpg"
+      },
+      {
+        "name": "11",
+        "animation": {
+          "animationAssetsPath": "stories/story3/11",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/11/images/aud_0.mp3",
+              "en": "/assets/stories/story3/11/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/11/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene11/thumbnail.jpg"
+      },
+      {
+        "name": "12",
+        "animation": {
+          "animationAssetsPath": "stories/story3/12",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/12/images/aud_0.mp3",
+              "en": "/assets/stories/story3/12/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/12/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene12/thumbnail.jpg"
+      },
+      {
+        "name": "13",
+        "animation": {
+          "animationAssetsPath": "stories/story3/13",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/13/images/aud_0.mp3",
+              "en": "/assets/stories/story3/13/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/13/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene13/thumbnail.jpg"
+      },
+      {
+        "name": "14",
+        "animation": {
+          "animationAssetsPath": "stories/story3/14",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/14/images/aud_0.mp3",
+              "en": "/assets/stories/story3/14/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/14/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene14/thumbnail.jpg"
+      },
+      {
+        "name": "15",
+        "animation": {
+          "animationAssetsPath": "stories/story3/15",
+          "audio": {
+            "voiceOver": {
+              "nl": "/assets/stories/story3/15/images/aud_0.mp3",
+              "en": "/assets/stories/story3/15/images/aud_0.mp3",
+              "fr": "/assets/stories/story3/15/images/aud_0.mp3"
+            }
+          }
+        },
+        "thumbnail": "/assets/stories/story2/scene15/thumbnail.jpg"
+      }
+    ]
+  }
+]

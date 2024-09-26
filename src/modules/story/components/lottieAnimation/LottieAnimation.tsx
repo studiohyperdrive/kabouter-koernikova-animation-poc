@@ -30,7 +30,6 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
     pauseAllAudioTracks,
     unloadAllAudioTracks,
     fadeInAmbientTracks,
-    fadeOutAllAudioTracks,
     fadeOutAmbientTracks,
     switchVoiceOverTrack,
   } = useAudio();
@@ -40,7 +39,7 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
   }, [animationData]);
 
   useEffect(() => {
-    if (audioTracks) {
+    if (audioTracks && play) {
       playAllAudioTracks();
     }
 
@@ -94,9 +93,9 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
   }, [isAmbientPlaying]);
 
   useEffect(() => {
-    if (inTransition) {
-      fadeOutAllAudioTracks();
-    }
+    // if (inTransition) {
+    //   fadeOutAllAudioTracks();
+    // }
   }, [inTransition]);
 
   useEffect(() => {
@@ -115,7 +114,6 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
   }, [isPaused]);
 
   const onAnimationCompleted = () => {
-    console.log("Animation completed");
     onCompleted && onCompleted(true);
   };
 

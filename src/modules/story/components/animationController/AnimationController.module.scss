@@ -64,6 +64,9 @@
     bottom: 1rem;
     left: 50%;
   }
+  &-pause.hidden {
+    opacity: 0;
+  }
 
   &-language {
     bottom: 1rem;

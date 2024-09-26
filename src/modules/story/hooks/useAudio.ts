@@ -36,7 +36,6 @@ export const useAudio = () => {
 
   const playAllAudioTracks = () => {
     if (audioTracks) {
-      fadeInAllAudioTracks();
       audioTracks.ambient.play();
       audioTracks.backgroundMusic.play();
       audioTracks.voiceOver.play();
@@ -85,13 +84,13 @@ export const useAudio = () => {
     }, 1500);
   };
 
-  const fadeInAllAudioTracks = () => {
-    if (audioTracks) {
-      audioTracks.ambient.fade(0, 0.25, 1000);
-      audioTracks.backgroundMusic.fade(0, 0.35, 1000);
-      audioTracks.voiceOver.fade(0, 0.5, 1000);
-    }
-  };
+  // const fadeInAllAudioTracks = () => {
+  //   if (audioTracks) {
+  //     audioTracks.ambient.fade(0, 0.25, 1000);
+  //     audioTracks.backgroundMusic.fade(0, 0.35, 1000);
+  //     audioTracks.voiceOver.fade(0, 0.5, 1000);
+  //   }
+  // };
 
   const fadeOutAllAudioTracks = () => {
     if (audioTracks) {
