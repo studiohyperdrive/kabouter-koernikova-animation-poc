@@ -6,7 +6,6 @@ import cx from "classnames/bind";
 import {
   BooksIcon,
   IconButton,
-  MusicNoteIcon,
   PauseIcon,
   PlayButtonIcon,
 } from "../../../shared/components";
@@ -33,9 +32,11 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
   const [currentTransition, setCurrentTransition] = useState<
     IAnimation | undefined
   >(undefined);
-  const [isAmbientPlaying, setIsAmbientPlaying] = useState<boolean>(true);
+  // Uncomment the following line to enable ambient audio pausing
+  // const [isAmbientPlaying, setIsAmbientPlaying] = useState<boolean>(true);
   const [language, setLanguage] = useState<ELanguage>(ELanguage.NL);
-  const [isPaused, setIspaused] = useState<boolean>(false);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [selectingScene, setSelectingScene] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const onSceneComplete = (completed: boolean, isCurrentScene: boolean) => {
@@ -46,8 +47,12 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
     }
   };
 
+  const onSceneSelectToggle = () => {
+    setSelectingScene(!selectingScene);
+    setIsPaused(!isPaused);
+  };
+
   const changeScene = (index: number) => {
-    console.log(currentScene?.transitionAnimation);
     if (currentScene?.transitionAnimation) {
       setInTransition(true);
 
@@ -90,7 +95,8 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
             play={isCurrentScene}
             zIndex={isCurrentScene ? 10 : 0}
             loop={false}
-            isAmbientPlaying={isAmbientPlaying}
+            // Uncomment the following line to enable ambient audio pausing
+            // isAmbientPlaying={isAmbientPlaying}
             inTransition={inTransition}
             language={language}
             isPaused={isCurrentScene ? isPaused : true}
@@ -109,7 +115,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
 
   const onLanguageChange = (languageId: ELanguage) => {
     setLanguage(languageId);
-    setIspaused(false);
+    setIsPaused(false);
   };
 
   useEffect(() => {
@@ -141,28 +147,35 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                 className={cxBind("btn", "btn-back")}
               />
 
-              <IconButton
+              {/* Uncomment the following lines to enable ambient audio pausing */}
+              {/* <IconButton
                 icon={<MusicNoteIcon />}
                 onClick={() => setIsAmbientPlaying(!isAmbientPlaying)}
                 className={cxBind("btn", "btn-audio")}
-              />
+              /> */}
 
               <SceneSelect
                 onSelectScene={(sceneIndex: number) => changeScene(sceneIndex)}
                 scenes={scenesData}
+                currentSceneIndex={sceneIndex}
+                onToggle={onSceneSelectToggle}
                 className={cxBind("btn", "btn-chapter")}
               />
-              <Popup open={isPaused} onClose={() => setIspaused(false)}>
+
+              <Popup
+                open={isPaused && !selectingScene}
+                onClose={() => setIsPaused(false)}
+              >
                 <IconButton
                   icon={<PlayButtonIcon />}
-                  onClick={() => setIspaused(false)}
+                  onClick={() => setIsPaused(false)}
                   className={cxBind("btn")}
                 />
               </Popup>
 
               <IconButton
                 icon={isPaused ? <PlayButtonIcon /> : <PauseIcon />}
-                onClick={() => setIspaused(!isPaused)}
+                onClick={() => setIsPaused(!isPaused)}
                 className={cxBind("btn", "btn-pause", isPaused && "hidden")}
               />
 

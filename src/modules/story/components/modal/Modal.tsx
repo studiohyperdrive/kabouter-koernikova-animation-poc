@@ -10,6 +10,7 @@ interface IModalProps {
   onClose: () => void;
   children: React.ReactNode;
   className?: string;
+  onOpen?: () => void;
 }
 
 export const Modal: FC<IModalProps> = ({
@@ -17,6 +18,7 @@ export const Modal: FC<IModalProps> = ({
   isOpen,
   className,
   onClose,
+  onOpen,
 }) => {
   return (
     <Popup
@@ -25,6 +27,7 @@ export const Modal: FC<IModalProps> = ({
       closeOnDocumentClick
       onClose={onClose}
       className="chapter-select"
+      onOpen={onOpen}
     >
       <div className={cxBind("modal", className)}>{children}</div>
     </Popup>

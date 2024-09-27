@@ -18,7 +18,7 @@
         "interactive": [
           { "trigger": "rendier", "effect": "rendier-interactivity" }
         ],
-        "thumbnail": "/assets/stories/story2/scene1/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/01/thumbnail.png"
       },
       {
         "name": "02",
@@ -32,7 +32,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene2/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/02/thumbnail.png"
       },
       {
         "name": "03",
@@ -46,7 +46,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene3/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/03/thumbnail.png"
       },
       {
         "name": "04",
@@ -60,7 +60,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene4/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/04/thumbnail.png"
       },
       {
         "name": "05",
@@ -75,7 +75,7 @@
           }
         },
 
-        "thumbnail": "/assets/stories/story2/scene5/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/05/thumbnail.png"
       },
       {
         "name": "06",
@@ -89,7 +89,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene6/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/06/thumbnail.png"
       },
       {
         "name": "07",
@@ -103,7 +103,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene7/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/07/thumbnail.png"
       },
       {
         "name": "08",
@@ -117,7 +117,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene8/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/08/thumbnail.png"
       },
       {
         "name": "09",
@@ -131,7 +131,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene9/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/09/thumbnail.png"
       },
       {
         "name": "10",
@@ -145,7 +145,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene10/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/10/thumbnail.png"
       },
       {
         "name": "11",
@@ -159,7 +159,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene11/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/11/thumbnail.png"
       },
       {
         "name": "12",
@@ -173,7 +173,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene12/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/12/thumbnail.png"
       },
       {
         "name": "13",
@@ -187,7 +187,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene13/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/13/thumbnail.png"
       },
       {
         "name": "14",
@@ -201,7 +201,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene14/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/14/thumbnail.png"
       },
       {
         "name": "15",
@@ -215,7 +215,7 @@
             }
           }
         },
-        "thumbnail": "/assets/stories/story2/scene15/thumbnail.jpg"
+        "thumbnail": "/assets/stories/story3/15/thumbnail.png"
       }
     ]
   }

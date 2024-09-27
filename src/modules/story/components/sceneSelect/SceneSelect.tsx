@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   PlayButtonIcon,
   IconButton,
@@ -10,10 +10,13 @@ import { IScene } from "../../types";
 import "react-multi-carousel/lib/styles.css";
 import { Modal } from "../modal";
 import { BaseCarousel } from "../baseCarousel";
+import { flatten, indexOf, reverse, splitAt } from "ramda";
 
 interface ISceneSelectProps {
   onSelectScene: (sceneIndex: number) => void;
   scenes: IScene[];
+  currentSceneIndex: number;
+  onToggle: () => void;
   className?: string;
 }
 
@@ -22,14 +25,38 @@ const cxBind = cx.bind(styles);
 export const SceneSelect: FC<ISceneSelectProps> = ({
   onSelectScene,
   scenes,
+  currentSceneIndex,
   className,
+  onToggle,
 }) => {
   const [popupIsOpen, setPopupIsOpen] = useState<boolean>(false);
-  const [currentSceneIndex, setCurrentSceneIndex] = useState<number>(0);
+  const [selectedSceneIndex, setSelectedSceneIndex] = useState<number>(0);
+  const [sceneList, setSceneList] = useState<IScene[]>(scenes);
 
-  const onSelect = (sceneIndex: number) => {
+  useEffect(() => {
+    let orderedSceneList = scenes;
+
+    if (currentSceneIndex !== 0) {
+      orderedSceneList = flatten(reverse(splitAt(currentSceneIndex, scenes)));
+    }
+
+    setSceneList(orderedSceneList);
+  }, [currentSceneIndex]);
+
+  const onSelect = (scene: IScene) => {
+    const sceneIndex = indexOf(scene, scenes);
     onSelectScene(sceneIndex);
     setPopupIsOpen(false);
+  };
+
+  const onClose = () => {
+    setPopupIsOpen(false);
+    onToggle();
+  };
+
+  const onOpen = () => {
+    setPopupIsOpen(true);
+    onToggle();
   };
 
   return (
@@ -44,33 +71,37 @@ export const SceneSelect: FC<ISceneSelectProps> = ({
 
       <Modal
         isOpen={popupIsOpen}
-        onClose={() => setPopupIsOpen(false)}
+        onOpen={onOpen}
+        onClose={onClose}
         className={cxBind("modal")}
       >
         <h2>Kies een hoofstuk</h2>
 
         <BaseCarousel
-          onSlideChange={setCurrentSceneIndex}
+          onSlideChange={setSelectedSceneIndex}
           dataLength={scenes.length}
         >
-          {scenes.map((scene, index) => (
+          {sceneList.map((scene, index) => (
             <div className={cxBind("scene")} key={index} data-index={index}>
-              {index === currentSceneIndex && (
-                <div
-                  className={`react-multi-carousel-item-button ${cxBind(
-                    "icon-container"
-                  )}`}
-                  onClick={() => onSelect(index)}
-                >
-                  <PlayButtonIcon />
-                </div>
-              )}
+              {scene.name === sceneList[selectedSceneIndex].name &&
+                index !== 0 && (
+                  <div
+                    className={`react-multi-carousel-item-button ${cxBind(
+                      "icon-container"
+                    )}`}
+                    onClick={() => onSelect(scene)}
+                  >
+                    <PlayButtonIcon />
+                  </div>
+                )}
 
               <div className={cxBind("scene-thumbnail-container")}>
                 <img src={scene.thumbnail} alt={scene.name} />
               </div>
 
-              <div className={cxBind("scene-index")}>{index + 1}</div>
+              <div className={cxBind("scene-index")}>
+                {scene.name.replace("0", "")}
+              </div>
             </div>
           ))}
         </BaseCarousel>

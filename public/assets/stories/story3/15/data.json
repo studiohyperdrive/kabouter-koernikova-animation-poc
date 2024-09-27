@@ -10,154 +10,162 @@
   "assets": [
     {
       "id": "image_0",
-      "w": 450,
-      "h": 936,
+      "w": 2599,
+      "h": 1193,
       "u": "images/",
       "p": "img_0.png",
       "e": 0
     },
     {
       "id": "image_1",
-      "w": 1244,
-      "h": 1361,
+      "w": 450,
+      "h": 936,
       "u": "images/",
       "p": "img_1.png",
       "e": 0
     },
     {
       "id": "image_2",
-      "w": 51,
-      "h": 51,
+      "w": 1244,
+      "h": 1361,
       "u": "images/",
       "p": "img_2.png",
       "e": 0
     },
     {
       "id": "image_3",
-      "w": 56,
-      "h": 44,
+      "w": 51,
+      "h": 51,
       "u": "images/",
       "p": "img_3.png",
       "e": 0
     },
     {
       "id": "image_4",
-      "w": 125,
-      "h": 56,
+      "w": 56,
+      "h": 44,
       "u": "images/",
       "p": "img_4.png",
       "e": 0
     },
     {
       "id": "image_5",
-      "w": 96,
-      "h": 61,
+      "w": 125,
+      "h": 56,
       "u": "images/",
       "p": "img_5.png",
       "e": 0
     },
     {
       "id": "image_6",
-      "w": 298,
-      "h": 118,
+      "w": 96,
+      "h": 61,
       "u": "images/",
       "p": "img_6.png",
       "e": 0
     },
     {
       "id": "image_7",
-      "w": 62,
-      "h": 64,
+      "w": 298,
+      "h": 118,
       "u": "images/",
       "p": "img_7.png",
       "e": 0
     },
     {
       "id": "image_8",
-      "w": 649,
-      "h": 902,
+      "w": 62,
+      "h": 64,
       "u": "images/",
       "p": "img_8.png",
       "e": 0
     },
     {
       "id": "image_9",
-      "w": 22,
-      "h": 62,
+      "w": 649,
+      "h": 902,
       "u": "images/",
       "p": "img_9.png",
       "e": 0
     },
     {
       "id": "image_10",
-      "w": 131,
-      "h": 127,
+      "w": 22,
+      "h": 62,
       "u": "images/",
       "p": "img_10.png",
       "e": 0
     },
     {
       "id": "image_11",
-      "w": 23,
-      "h": 22,
+      "w": 131,
+      "h": 127,
       "u": "images/",
       "p": "img_11.png",
       "e": 0
     },
     {
       "id": "image_12",
-      "w": 89,
-      "h": 83,
+      "w": 23,
+      "h": 22,
       "u": "images/",
       "p": "img_12.png",
       "e": 0
     },
     {
       "id": "image_13",
-      "w": 241,
-      "h": 116,
+      "w": 89,
+      "h": 83,
       "u": "images/",
       "p": "img_13.png",
       "e": 0
     },
     {
       "id": "image_14",
-      "w": 2295,
-      "h": 1172,
+      "w": 241,
+      "h": 116,
       "u": "images/",
       "p": "img_14.png",
       "e": 0
     },
     {
       "id": "image_15",
-      "w": 6293,
-      "h": 2043,
+      "w": 2295,
+      "h": 1172,
       "u": "images/",
       "p": "img_15.png",
       "e": 0
     },
     {
       "id": "image_16",
-      "w": 1277,
-      "h": 441,
+      "w": 6293,
+      "h": 2043,
       "u": "images/",
       "p": "img_16.png",
       "e": 0
     },
     {
       "id": "image_17",
-      "w": 2899,
-      "h": 1137,
+      "w": 1277,
+      "h": 441,
       "u": "images/",
       "p": "img_17.png",
       "e": 0
     },
     {
       "id": "image_18",
+      "w": 2899,
+      "h": 1137,
+      "u": "images/",
+      "p": "img_18.png",
+      "e": 0
+    },
+    {
+      "id": "image_19",
       "w": 4724,
       "h": 3543,
       "u": "images/",
-      "p": "img_18.jpg",
+      "p": "img_19.jpg",
       "e": 0
     },
     { "id": "audio_0", "u": "images/", "p": "aud_0.mp3", "e": 0, "t": 2 }
@@ -181,8 +189,28 @@
       "ddd": 0,
       "ind": 2,
       "ty": 2,
-      "nm": "2(glimworm)",
+      "nm": "1 (nest foreground)",
       "refId": "image_0",
+      "sr": 1,
+      "ks": {
+        "o": { "a": 0, "k": 100, "ix": 11 },
+        "r": { "a": 0, "k": 0, "ix": 10 },
+        "p": { "a": 0, "k": [2366.5, 2360.5, 0], "ix": 2, "l": 2 },
+        "a": { "a": 0, "k": [1299.5, 596.5, 0], "ix": 1, "l": 2 },
+        "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 5432,
+      "st": 0,
+      "bm": 0
+    },
+    {
+      "ddd": 0,
+      "ind": 3,
+      "ty": 2,
+      "nm": "2(glimworm)",
+      "refId": "image_1",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -199,10 +227,10 @@
     },
     {
       "ddd": 0,
-      "ind": 3,
+      "ind": 4,
       "ty": 2,
       "nm": "3(kournikova)",
-      "refId": "image_1",
+      "refId": "image_2",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -219,11 +247,11 @@
     },
     {
       "ddd": 0,
-      "ind": 4,
+      "ind": 5,
       "ty": 2,
       "nm": "16 (leerling)",
-      "parent": 3,
-      "refId": "image_2",
+      "parent": 4,
+      "refId": "image_3",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -1510,11 +1538,11 @@
     },
     {
       "ddd": 0,
-      "ind": 5,
+      "ind": 6,
       "ty": 2,
       "nm": "17 (leerling)",
-      "parent": 3,
-      "refId": "image_3",
+      "parent": 4,
+      "refId": "image_4",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -2801,11 +2829,11 @@
     },
     {
       "ddd": 0,
-      "ind": 6,
+      "ind": 7,
       "ty": 2,
       "nm": "Layer 3",
-      "parent": 3,
-      "refId": "image_4",
+      "parent": 4,
+      "refId": "image_5",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -2822,11 +2850,11 @@
     },
     {
       "ddd": 0,
-      "ind": 7,
+      "ind": 8,
       "ty": 2,
       "nm": "Layer 2",
-      "parent": 3,
-      "refId": "image_5",
+      "parent": 4,
+      "refId": "image_6",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -2843,10 +2871,10 @@
     },
     {
       "ddd": 0,
-      "ind": 8,
+      "ind": 9,
       "ty": 2,
       "nm": "adelaar- onderbek",
-      "refId": "image_6",
+      "refId": "image_7",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -2863,10 +2891,10 @@
     },
     {
       "ddd": 0,
-      "ind": 9,
+      "ind": 10,
       "ty": 2,
       "nm": "adelaar tong",
-      "refId": "image_7",
+      "refId": "image_8",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -2923,10 +2951,10 @@
     },
     {
       "ddd": 0,
-      "ind": 10,
+      "ind": 11,
       "ty": 2,
       "nm": "adelaar lichaam",
-      "refId": "image_8",
+      "refId": "image_9",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -2943,10 +2971,10 @@
     },
     {
       "ddd": 0,
-      "ind": 11,
+      "ind": 12,
       "ty": 2,
       "nm": "adelaar druppel",
-      "refId": "image_9",
+      "refId": "image_10",
       "sr": 1,
       "ks": {
         "o": {
@@ -6688,10 +6716,10 @@
     },
     {
       "ddd": 0,
-      "ind": 12,
+      "ind": 13,
       "ty": 2,
       "nm": "adelaar - eye close",
-      "refId": "image_10",
+      "refId": "image_11",
       "sr": 1,
       "ks": {
         "o": {
@@ -6755,10 +6783,10 @@
     },
     {
       "ddd": 0,
-      "ind": 13,
+      "ind": 14,
       "ty": 2,
       "nm": "adelaar - Pupil",
-      "refId": "image_11",
+      "refId": "image_12",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -6775,10 +6803,10 @@
     },
     {
       "ddd": 0,
-      "ind": 14,
+      "ind": 15,
       "ty": 2,
       "nm": "adelaar oog",
-      "refId": "image_12",
+      "refId": "image_13",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -6795,10 +6823,10 @@
     },
     {
       "ddd": 0,
-      "ind": 15,
+      "ind": 16,
       "ty": 2,
       "nm": "arend",
-      "refId": "image_13",
+      "refId": "image_14",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -6855,10 +6883,10 @@
     },
     {
       "ddd": 0,
-      "ind": 16,
+      "ind": 17,
       "ty": 2,
       "nm": "11 (nest background)",
-      "refId": "image_14",
+      "refId": "image_15",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -6875,10 +6903,10 @@
     },
     {
       "ddd": 0,
-      "ind": 17,
+      "ind": 18,
       "ty": 2,
       "nm": "12 (berg)",
-      "refId": "image_15",
+      "refId": "image_16",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -6895,10 +6923,10 @@
     },
     {
       "ddd": 0,
-      "ind": 18,
+      "ind": 19,
       "ty": 2,
       "nm": "13 (cloud small)",
-      "refId": "image_16",
+      "refId": "image_17",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -6930,10 +6958,10 @@
     },
     {
       "ddd": 0,
-      "ind": 19,
+      "ind": 20,
       "ty": 2,
       "nm": "14 (cloud big)",
-      "refId": "image_17",
+      "refId": "image_18",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
@@ -6965,10 +6993,10 @@
     },
     {
       "ddd": 0,
-      "ind": 20,
+      "ind": 21,
       "ty": 2,
       "nm": "achtergrondje",
-      "refId": "image_18",
+      "refId": "image_19",
       "sr": 1,
       "ks": {
         "o": { "a": 0, "k": 100, "ix": 11 },
