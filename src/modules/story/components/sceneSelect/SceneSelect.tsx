@@ -16,7 +16,8 @@ interface ISceneSelectProps {
   onSelectScene: (sceneIndex: number) => void;
   scenes: IScene[];
   currentSceneIndex: number;
-  onToggle: () => void;
+  onOpen: () => void;
+  onClose: () => void;
   className?: string;
 }
 
@@ -27,7 +28,8 @@ export const SceneSelect: FC<ISceneSelectProps> = ({
   scenes,
   currentSceneIndex,
   className,
-  onToggle,
+  onOpen,
+  onClose,
 }) => {
   const [popupIsOpen, setPopupIsOpen] = useState<boolean>(false);
   const [selectedSceneIndex, setSelectedSceneIndex] = useState<number>(0);
@@ -49,14 +51,14 @@ export const SceneSelect: FC<ISceneSelectProps> = ({
     setPopupIsOpen(false);
   };
 
-  const onClose = () => {
+  const onModalClose = () => {
     setPopupIsOpen(false);
-    onToggle();
+    onClose();
   };
 
-  const onOpen = () => {
+  const onModalOpen = () => {
     setPopupIsOpen(true);
-    onToggle();
+    onOpen();
   };
 
   return (
@@ -71,8 +73,8 @@ export const SceneSelect: FC<ISceneSelectProps> = ({
 
       <Modal
         isOpen={popupIsOpen}
-        onOpen={onOpen}
-        onClose={onClose}
+        onOpen={onModalOpen}
+        onClose={onModalClose}
         className={cxBind("modal")}
       >
         <h2>Kies een hoofstuk</h2>
@@ -99,9 +101,7 @@ export const SceneSelect: FC<ISceneSelectProps> = ({
                 <img src={scene.thumbnail} alt={scene.name} />
               </div>
 
-              <div className={cxBind("scene-index")}>
-                {scene.name.replace("0", "")}
-              </div>
+              <div className={cxBind("scene-index")}>{scene.name}</div>
             </div>
           ))}
         </BaseCarousel>

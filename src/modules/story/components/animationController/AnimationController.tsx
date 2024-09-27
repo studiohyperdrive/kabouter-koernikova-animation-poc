@@ -47,12 +47,18 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
     }
   };
 
-  const onSceneSelectToggle = () => {
-    setSelectingScene(!selectingScene);
-    setIsPaused(!isPaused);
+  const onSceneSelectOpen = () => {
+    setSelectingScene(true);
+    setIsPaused(true);
+  };
+
+  const onSceneSelectClose = () => {
+    setSelectingScene(false);
+    setIsPaused(false);
   };
 
   const changeScene = (index: number) => {
+    setIsPaused(false);
     if (currentScene?.transitionAnimation) {
       setInTransition(true);
 
@@ -158,12 +164,13 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
                 onSelectScene={(sceneIndex: number) => changeScene(sceneIndex)}
                 scenes={scenesData}
                 currentSceneIndex={sceneIndex}
-                onToggle={onSceneSelectToggle}
+                onOpen={onSceneSelectOpen}
+                onClose={onSceneSelectClose}
                 className={cxBind("btn", "btn-chapter")}
               />
 
               <Popup
-                open={isPaused && !selectingScene}
+                open={selectingScene ? false : isPaused}
                 onClose={() => setIsPaused(false)}
               >
                 <IconButton
