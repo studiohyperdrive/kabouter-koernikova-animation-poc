@@ -57,8 +57,12 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
     setIsPaused(false);
   };
 
+  const onSceneSelect = (sceneIndex: number) => {
+    setIsPaused(true);
+    changeScene(sceneIndex);
+  };
+
   const changeScene = (index: number) => {
-    setIsPaused(false);
     if (currentScene?.transitionAnimation) {
       setInTransition(true);
 
@@ -80,6 +84,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
     } else {
       setSceneIndex(index);
       setCurrentScene(scenesData[index]);
+      setIsPaused(false);
     }
   };
 
@@ -161,7 +166,7 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
               /> */}
 
               <SceneSelect
-                onSelectScene={(sceneIndex: number) => changeScene(sceneIndex)}
+                onSelectScene={onSceneSelect}
                 scenes={scenesData}
                 currentSceneIndex={sceneIndex}
                 onOpen={onSceneSelectOpen}
