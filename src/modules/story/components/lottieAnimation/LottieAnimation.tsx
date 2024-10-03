@@ -119,6 +119,7 @@ export const LottieAnimation: FC<ILottieAnimationProps> = ({
 
   return (
     <Lottie
+      renderer={"canvas" as any}
       animationData={animationData}
       autoplay={autoplay}
       loop={loop}
