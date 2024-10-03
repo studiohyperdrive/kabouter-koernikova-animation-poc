@@ -88,9 +88,41 @@ export const AnimationController: FC<IAnimationControllerProps> = ({
     }
   };
 
+  const preloadAssets = (scene: IScene) => {
+    const images = scene?.animation?.animationData?.assets?.reduce((acc: string[], { u, p }: any) => {
+      if (!u || !p) {
+        return acc;
+      }
+
+      return acc.concat(`${scene.animation.animationAssetsPath}/${u}${p}`);
+    }, []) || [];
+
+    const prefetchImage = (src: string) => {
+      return new Promise((resolve) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+      });
+    };
+
+    return Promise.all(images.map(prefetchImage))
+      .then(() => {
+        console.log('All assets prefetched!');
+      })
+      .catch((err) => {
+        console.error('Assets preloading failed', err);
+      });
+  };
+
   const renderScenes = () => {
     if (currentScene) {
       const nextScene = scenesData[sceneIndex + 1];
+
+      preloadAssets(currentScene);
+      
+      if (nextScene) {
+        preloadAssets(nextScene);
+      }
 
       return reject(isNil, [currentScene, nextScene]).map((scene, index) => {
         const isCurrentScene = currentScene.name === scene.name;
